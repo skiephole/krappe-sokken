@@ -5,6 +5,8 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+  filter: invert(36%) sepia(16%) saturate(4174%) hue-rotate(242deg)
+    brightness(96%) contrast(99%);
 }
 
 @media (prefers-reduced-motion: no-preference) {
