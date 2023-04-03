@@ -1,0 +1,12 @@
+// helpers
+@import "variables";
+
+#app {
+  z-index: 0;
+  min-height: 100%;
+}
+
+// used by Google Optimize
+.async-hide {
+  opacity: 0 !important;
+}

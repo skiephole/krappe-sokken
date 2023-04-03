@@ -1,0 +1,183 @@
+@use "sass:math";
+
+// -----------
+// media mixin
+// -----------
+//
+// usage:
+//     @include media(500px) {
+//         // css for above 500px
+//     }
+//
+//     @include media(500px, 600px) {
+//         // css for between 500px - 599px
+//     }
+
+@mixin media-query($from, $to: null) {
+  $query: "screen";
+
+  @if $from {
+    $query: unquote("#{$query} and (min-width: #{$from})");
+  }
+
+  @if $to {
+    $query: unquote("#{$query} and (max-width: #{$to - 1px})");
+  }
+
+  @media #{$query} {
+    @content;
+  }
+}
+
+$static-url: "/static/";
+@function static-url($relative-path) {
+  @return unquote('url("#{$static-url}#{$relative-path}")');
+}
+
+@mixin gradient($direction, $color) {
+  $gradient: linear-gradient(
+    unquote($direction),
+    $color 0%,
+    rgba($color, 0.738) 19%,
+    rgba($color, 0.541) 34%,
+    rgba($color, 0.382) 47%,
+    rgba($color, 0.278) 56.5%,
+    rgba($color, 0.194) 65%,
+    rgba($color, 0.126) 73%,
+    rgba($color, 0.075) 80.2%,
+    rgba($color, 0.042) 86.1%,
+    rgba($color, 0.021) 91%,
+    rgba($color, 0.008) 95.2%,
+    rgba($color, 0.002) 98.2%,
+    rgba($color, 0) 100%
+  );
+  background-image: $gradient;
+}
+
+@mixin ellipse() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin fixed-ratio($w, $h, $pseudo: "after") {
+  #{unquote("&:#{$pseudo}")} {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0;
+    padding-bottom: math.div($h, $w) * 100%;
+  }
+}
+
+@mixin truncate($lines, $line-height, $font-size: 1em) {
+  line-height: $line-height;
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  max-height: $lines * $line-height * $font-size;
+  font-size: $font-size;
+  overflow: hidden;
+}
+
+@mixin card($shadow: true) {
+  padding: 1.5rem 1rem 1rem;
+  border: $card-border;
+  border-radius: $card-border-radius;
+  margin-bottom: 1rem;
+
+  @if $shadow {
+    box-shadow: $card-shadow;
+  }
+}
+
+@mixin scalable-container() {
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+@mixin light-gradient($direction) {
+  background: linear-gradient(
+    $direction,
+    var(--light-grandient-from) 10%,
+    var(--light-grandient-to)
+  );
+}
+
+@mixin colored-gradient($direction) {
+  background: linear-gradient(
+    $direction,
+    var(--colored-grandient-from),
+    var(--colored-grandient-to)
+  );
+}
+
+@mixin bullet($content, $size: 150px, $borderColor: #e9efea) {
+  $backgroundColor: #fff;
+
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  bottom: 0;
+  margin-bottom: 0;
+  padding: calc(#{$size} / 1.25) 1.5rem 1.5rem;
+  border: none;
+  background-color: $backgroundColor;
+
+  &__wrapper {
+    filter: drop-shadow(0 0px 6px rgba(0, 0, 0, 0.19));
+    padding-top: calc(#{$size} / 5);
+
+    &__flat {
+      padding-top: calc(#{$size} / 5);
+      filter: drop-shadow(2px 0px 0px $borderColor)
+        drop-shadow(-2px 0px 0px $borderColor)
+        drop-shadow(0px 2px 0px $borderColor)
+        drop-shadow(0px -2px 0px $borderColor);
+    }
+  }
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: $size;
+    height: $size;
+    left: 50%;
+    top: 0;
+    border-radius: 50%;
+    transform: translate(-50%, calc(-#{$size} / 5));
+    background-color: $backgroundColor;
+  }
+
+  &:after {
+    content: $content;
+    display: grid;
+    place-items: center;
+    width: calc(#{$size} * 0.8);
+    height: calc(#{$size} * 0.8);
+    border: 3px solid #ebe9e9;
+    color: var(--primary-color);
+    position: absolute;
+    left: 50%;
+    top: calc(#{$size} * 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, calc(-#{$size} / 5));
+    font-size: calc(#{$size} / 2.25);
+    font-weight: bold;
+  }
+}

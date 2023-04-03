@@ -1,0 +1,48 @@
+@import "../../styles/variables";
+
+.block {
+  background-color: #fee440;
+  height: 100vh;
+}
+
+.welcome {
+  display: flex;
+
+  align-items: center;
+  height: 80%;
+  @include media-query(0, $breakpoint-medium) {
+    flex-direction: column;
+  }
+}
+
+.socks {
+  width: 100%;
+  @include media-query(0, $breakpoint-medium) {
+    max-width: 10rem;
+  }
+}
+
+.socksWrap {
+  max-width: 50%;
+  @include media-query(0, $breakpoint-medium) {
+    max-width: 100%;
+  }
+}
+
+.textWrap {
+  max-width: 50%;
+  @include media-query(0, $breakpoint-medium) {
+    max-width: 100%;
+  }
+}
+
+.textBubble {
+  background: #ffffff;
+  border-style: solid;
+  border-width: 5px;
+  border-color: #000000;
+  overflow: 0;
+  border-radius: 25px;
+  margin: 2rem;
+  padding: 1rem;
+}
