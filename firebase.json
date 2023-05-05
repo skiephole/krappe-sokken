@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "krappe-sokken",
     "public": "dist",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
@@ -7,6 +8,10 @@
         "source": "**",
         "destination": "/index.html"
       }
-    ]
+    ],
+    "rules": {
+      ".read": "true",
+      ".write": "true"
+    }
   }
 }

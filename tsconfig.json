@@ -15,7 +15,10 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "paths": {
+      "app/*": ["./src/ui/*"]
+    }
   },
-  "include": ["src"]
+  "include": ["src", "src/firebase.ts"]
 }

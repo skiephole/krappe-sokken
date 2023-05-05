@@ -1,7 +1,8 @@
 import type * as React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faInstagram, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import $ from "./navigation.module.scss";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 const Navigation: React.FC = () => {
   return (
@@ -9,12 +10,23 @@ const Navigation: React.FC = () => {
       <div className={$.logoWrapper}>
         <h1 className={$.logoText}> Krappe Sokken</h1>
       </div>
-      <a
-        href="https://www.instagram.com/krappesokkenband/"
-        className={$.instagram}
-      >
-        <FontAwesomeIcon icon={faInstagram} size="2x" />
-      </a>
+      <div className={$.contactWrapper}>
+        <a href="mailto: krappesokken.nl" className={$.contactIcon}>
+          <FontAwesomeIcon icon={faEnvelope} size="2x" />
+        </a>
+        <a
+          href="https://www.youtube.com/@KrappeSokken/"
+          className={$.contactIcon}
+        >
+          <FontAwesomeIcon icon={faYoutube} size="2x" />
+        </a>
+        <a
+          href="https://www.instagram.com/krappesokkenband/"
+          className={$.contactIcon}
+        >
+          <FontAwesomeIcon icon={faInstagram} size="2x" />
+        </a>
+      </div>
     </nav>
   );
 };

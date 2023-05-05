@@ -3,46 +3,111 @@
 .block {
   background-color: #fee440;
   height: 100vh;
+  width: 100%;
+  max-width: 1440px;
 }
 
 .welcome {
   display: flex;
 
   align-items: center;
+  justify-content: center;
   height: 80%;
+  width: 100%;
   @include media-query(0, $breakpoint-medium) {
     flex-direction: column;
   }
 }
 
 .socks {
-  width: 100%;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  max-width: 80%;
+  animation: rotate 5s ease infinite;
+
   @include media-query(0, $breakpoint-medium) {
     max-width: 10rem;
   }
 }
 
 .socksWrap {
-  max-width: 50%;
+  display: flex;
+  justify-content: center;
+  width: 50%;
   @include media-query(0, $breakpoint-medium) {
-    max-width: 100%;
+    margin: 10% 0;
+    width: 100%;
   }
 }
 
-.textWrap {
-  max-width: 50%;
+.contentWrap {
+  width: 50%;
   @include media-query(0, $breakpoint-medium) {
-    max-width: 100%;
+    width: 100%;
   }
 }
 
 .textBubble {
   background: #ffffff;
-  border-style: solid;
-  border-width: 5px;
-  border-color: #000000;
-  overflow: 0;
+  border: #000000 5px solid;
   border-radius: 25px;
   margin: 2rem;
-  padding: 1rem;
+  @include media-query($breakpoint-medium) {
+    max-width: 75%;
+  }
+}
+
+.intro {
+  margin: 1rem;
+}
+
+.imageBubble {
+  border: #000000 5px solid;
+  border-radius: 25px;
+  max-width: 100%;
+  margin: 2rem;
+  max-width: 75%;
+  transition: width 1s ease-in-out;
+  @include media-query(0, $breakpoint-medium) {
+    display: none;
+  }
+}
+
+.indicator {
+  display: flex;
+  justify-content: center;
+
+  &.hide {
+    opacity: 0;
+    transition: all 0.5s;
+    visibility: hidden;
+  }
+}
+
+.arrow {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  animation: move 2s ease infinite;
+}
+
+@keyframes move {
+  0% {
+    transform: translateY(0%);
+  }
+
+  50% {
+    transform: translateY(50%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes rotate {
+  50% {
+    transform: rotate(15deg);
+  }
 }

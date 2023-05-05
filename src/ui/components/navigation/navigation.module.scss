@@ -2,7 +2,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  margin: 1rem 2rem;
+  width: 95%;
 }
 
 .logoWrapper {
@@ -12,11 +13,17 @@
   flex-direction: row;
 }
 
+.contactWrapper {
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+}
+
+.contactIcon {
+  color: #000000;
+}
+
 .logo {
   width: 3rem;
   height: 3rem;
-}
-
-.instagram {
-  color: #000000;
 }

@@ -1,24 +1,7 @@
 .container {
-  background-color: #f95738;
-}
-
-.logo {
-  height: 40vmin;
-  pointer-events: none;
-  filter: invert(36%) sepia(16%) saturate(4174%) hue-rotate(242deg)
-    brightness(96%) contrast(99%);
-}
-
-.header {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  color: #000000;
-}
-
-.link {
-  font-size: 2rem;
-  color: #44ffd1;
+  background-color: #fee440;
+  width: 100%;
 }

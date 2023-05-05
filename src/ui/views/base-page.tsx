@@ -1,22 +1,15 @@
 import type * as React from "react";
 import $ from "./base-page.module.scss";
 import IntroBlock from "../components/intro-block/intro-block";
+import Navigation from "app/components/navigation/navigation";
+import GalleryBlock from "app/components/gallery-block/gallery-block";
 
 const BasePageView: React.FC = () => {
   return (
     <div className={$.container}>
+      <Navigation />
       <IntroBlock />
-      <header className={$.header}>
-        <h1>Hier binnenkort de Krappe Sokken website</h1>
-        <a
-          className={$.link}
-          href="https://www.instagram.com/krappesokkenband/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Onze insta
-        </a>
-      </header>
+      <GalleryBlock />
     </div>
   );
 };
