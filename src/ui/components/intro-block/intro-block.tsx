@@ -13,6 +13,18 @@ const IntroBlock: React.FC = () => {
   const [groupImages, setGroupImages] = React.useState<string[]>([]);
   const [pending, setPending] = React.useState(false);
   const [randomNumber, setRandomNumber] = React.useState(0);
+  const [showImage, setShowImage] = React.useState<boolean>(
+    window.innerHeight > 800
+  );
+
+  const updateMedia = () => {
+    setShowImage(window.innerHeight > 800);
+  };
+
+  React.useEffect(() => {
+    window.addEventListener("resize", updateMedia);
+    return () => window.removeEventListener("resize", updateMedia);
+  });
 
   const arrowVisibility = () => {
     if (window.scrollY >= 200) {
@@ -62,7 +74,7 @@ const IntroBlock: React.FC = () => {
               ongematchte paren. Chaotisch, uniek en vol met verrassingen!
             </h1>
           </div>
-          {groupImages && !pending && (
+          {groupImages && !pending && showImage && (
             <img
               className={$.imageBubble}
               src={groupImages[randomNumber]}
