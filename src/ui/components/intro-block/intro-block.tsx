@@ -84,7 +84,7 @@ const IntroBlock: React.FC = () => {
         </div>
       </div>
       <div className={cx($.indicator, !arrowShown && $.hide)}>
-        <FontAwesomeIcon className={$.arrow} icon={faAngleDown} size="2x" />
+        <FontAwesomeIcon className={$.arrow} icon={faAngleDown} size="3x" />
       </div>
     </div>
   );

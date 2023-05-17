@@ -1,7 +1,7 @@
 /* Coolors Exported Palette - https://coolors.co/9046cf-fee440-f95738-5adbff-44ffd1 */
 
 /* CSV */
-9046cf,fee440,f95738,5adbff,44ffd1
+9046cf purple,fee440 yellow,f95738 coral,44ffd1 light blue
 
 /* With # */
 #9046cf, #fee440, #f95738, #5adbff, #44ffd1
