@@ -60,6 +60,9 @@
 
 .intro {
   margin: 1rem;
+  @include media-query(0, $breakpoint-large) {
+    font-size: x-large;
+  }
 }
 
 .imageBubble {

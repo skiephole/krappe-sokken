@@ -2,10 +2,13 @@
   background-color: #44ffd1;
   height: 100vh;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
 }
 
 .header {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,6 +18,15 @@
 }
 
 .link {
-  font-size: 2rem;
-  color: #44ffd1;
+  text-decoration: none;
+  color: #000000;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }

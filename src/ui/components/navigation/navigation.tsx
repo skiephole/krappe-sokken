@@ -8,7 +8,9 @@ const Navigation: React.FC = () => {
   return (
     <nav className={$.navigation}>
       <div className={$.logoWrapper}>
-        <h1 className={$.logoText}> Krappe Sokken</h1>
+        <a href="https://krappesokken.nl" className={$.logoText}>
+          Krappe Sokken
+        </a>
       </div>
       <div className={$.contactWrapper}>
         <a href="mailto: krappesokken.nl" className={$.contactIcon}>
