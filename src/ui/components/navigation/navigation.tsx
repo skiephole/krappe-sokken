@@ -13,7 +13,7 @@ const Navigation: React.FC = () => {
         </a>
       </div>
       <div className={$.contactWrapper}>
-        <a href="mailto: krappesokken.nl" className={$.contactIcon}>
+        <a href="mailto: krappesokkenband@gmail.com" className={$.contactIcon}>
           <FontAwesomeIcon icon={faEnvelope} size="2x" />
         </a>
         <a

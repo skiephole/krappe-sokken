@@ -60,18 +60,22 @@ const GalleryBlock: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            @6wies
+            @6wies ❤️
           </a>
         </p>
       </div>
       <header className={$.header}>
+        <a href="mailto: krappesokkenband@gmail.com" className={$.link}>
+          krappesokkenband@gmail.com
+        </a>
+        <span className={$.separator}>&nbsp; | &nbsp;</span>
         <a
           className={$.link}
           href="https://www.instagram.com/krappesokkenband/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Voor meer knappe koppies, kijk op onze insta ❤️
+          @krappesokkenband
         </a>
       </header>
     </div>
