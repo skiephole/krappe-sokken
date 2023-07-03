@@ -41,30 +41,33 @@ const GalleryBlock: React.FC = () => {
   return (
     <div className={$.block}>
       <div className={$.gallery}>
-        {groupImages && (
-          <SimpleImageSlider
-            width={isMedium ? 300 : 527}
-            height={isMedium ? 460 : 792}
-            navStyle={1}
-            images={groupImages}
-            showBullets={false}
-            showNavs={true}
-            autoPlay={true}
-          />
-        )}
-        <p>
-          Foto's door{" "}
-          <a
-            className={$.link}
-            href="https://www.instagram.com/6wies/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            @6wies ❤️
-          </a>
-        </p>
+        <div className={$.slider}>
+          {groupImages && (
+            <SimpleImageSlider
+              width={isMedium ? 300 : 527}
+              height={isMedium ? 460 : 792}
+              navStyle={1}
+              images={groupImages}
+              showBullets={false}
+              showNavs={true}
+              autoPlay={true}
+              autoPlayDelay={4}
+            />
+          )}
+          <p>
+            Foto's door{" "}
+            <a
+              className={$.link}
+              href="https://www.instagram.com/6wies/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <b>@6wies ❤️</b>
+            </a>
+          </p>
+        </div>
       </div>
-      <header className={$.header}>
+      <div className={$.footer}>
         <a href="mailto: krappesokkenband@gmail.com" className={$.link}>
           krappesokkenband@gmail.com
         </a>
@@ -77,7 +80,7 @@ const GalleryBlock: React.FC = () => {
         >
           @krappesokkenband
         </a>
-      </header>
+      </div>
     </div>
   );
 };
