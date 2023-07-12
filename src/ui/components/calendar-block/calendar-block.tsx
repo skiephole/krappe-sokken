@@ -11,15 +11,6 @@ const CalendarBlock: React.FC = () => {
         </div>
         <h2 className={$.mobileHeader}>Opkomende gigs:</h2>
         <a
-          href="https://www.instagram.com/cafestapper/"
-          target="_blank"
-          rel="noreferrer"
-          className={$.show}
-        >
-          <b className={$.date}>11/07 Stapper jam</b>
-          <span className={$.title}>Café Stapper, Alkmaar</span>
-        </a>
-        <a
           href="https://www.podiumvictorie.nl/programma/open-podium-13/07/23"
           className={$.show}
         >
