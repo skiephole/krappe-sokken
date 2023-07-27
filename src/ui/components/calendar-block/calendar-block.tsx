@@ -20,6 +20,15 @@ const CalendarBlock: React.FC = () => {
           <span className={$.title}>Café Stapper, Alkmaar</span>
         </a>
         <a
+          href="https://www.facebook.com/cafeparadisoalkmaar/"
+          target="_blank"
+          rel="noreferrer"
+          className={$.show}
+        >
+          <b className={$.date}>24/08 Paradiso met Captain</b>
+          <span className={$.title}>Café Paradiso, Alkmaar</span>
+        </a>
+        <a
           href="https://www.mixtream.nl/"
           target="_blank"
           rel="noreferrer"
@@ -27,6 +36,15 @@ const CalendarBlock: React.FC = () => {
         >
           <b className={$.date}>27/08 Mixtream Festival</b>
           <span className={$.title}>Rosarium Park, HHW</span>
+        </a>
+        <a
+          href="https://www.facebook.com/BergenLiveEvent/"
+          target="_blank"
+          rel="noreferrer"
+          className={$.show}
+        >
+          <b className={$.date}>02/09 Bergen Live</b>
+          <span className={$.title}>Centrum Bergen, Alkmaar</span>
         </a>
         <a
           href="https://www.instagram.com/cafestapper/"
