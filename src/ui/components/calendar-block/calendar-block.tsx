@@ -47,15 +47,6 @@ const CalendarBlock: React.FC = () => {
           <span className={$.title}>Centrum Bergen, Alkmaar</span>
         </a>
         <a
-          href="https://www.instagram.com/cafestapper/"
-          target="_blank"
-          rel="noreferrer"
-          className={$.show}
-        >
-          <b className={$.date}>05/09 Stapper jam</b>
-          <span className={$.title}>Café Stapper, Alkmaar</span>
-        </a>
-        <a
           href="https://volta-amsterdam.nl/"
           target="_blank"
           rel="noreferrer"

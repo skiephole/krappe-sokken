@@ -70,8 +70,8 @@ const IntroBlock: React.FC = () => {
         <div className={$.contentWrap}>
           <div className={$.textBubble}>
             <h1 className={$.intro}>
-              Welkom soklovers ❤️ Wij zijn als een sokkenlade vol met
-              ongematchte paren. Chaotisch, uniek en vol met verrassingen!
+              Welkom soklovers ❤️ Wij zijn een 6-koppige indie pop/punk band uit
+              Alkmaar. Muzikale vreugde die je laat dansen en glimlachen!
             </h1>
           </div>
           {groupImages && !pending && showImage && (

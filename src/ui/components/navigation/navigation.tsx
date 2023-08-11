@@ -21,25 +21,25 @@ const Navigation: React.FC = () => {
       </div>
       <div className={$.contactWrapper}>
         <a href="mailto: krappesokkenband@gmail.com" className={$.contactIcon}>
-          <FontAwesomeIcon icon={faEnvelope} size={isSmall ? "1x" : "2x"} />
+          <FontAwesomeIcon icon={faEnvelope} size={isSmall ? "lg" : "2x"} />
         </a>
         <a
           href="https://www.youtube.com/@KrappeSokken/"
           className={$.contactIcon}
         >
-          <FontAwesomeIcon icon={faYoutube} size={isSmall ? "1x" : "2x"} />
+          <FontAwesomeIcon icon={faYoutube} size={isSmall ? "lg" : "2x"} />
         </a>
         <a
           href="https://www.instagram.com/krappesokkenband/"
           className={$.contactIcon}
         >
-          <FontAwesomeIcon icon={faInstagram} size={isSmall ? "1x" : "2x"} />
+          <FontAwesomeIcon icon={faInstagram} size={isSmall ? "lg" : "2x"} />
         </a>
         <a
           href="https://www.tiktok.com/@krappe.sokken"
           className={$.contactIcon}
         >
-          <FontAwesomeIcon icon={faTiktok} size={isSmall ? "1x" : "2x"} />
+          <FontAwesomeIcon icon={faTiktok} size={isSmall ? "lg" : "2x"} />
         </a>
       </div>
     </nav>
