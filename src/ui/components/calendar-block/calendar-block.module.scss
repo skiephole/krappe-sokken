@@ -46,7 +46,7 @@
   border-top: 1px dotted grey;
   border-bottom: 1px dotted grey;
   padding: 1rem 0;
-  font-size: xx-large;
+  font-size: x-large;
 
   @include media-query(0, $breakpoint-medium) {
     font-size: large;

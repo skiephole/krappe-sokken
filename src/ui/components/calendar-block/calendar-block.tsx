@@ -25,7 +25,7 @@ const CalendarBlock: React.FC = () => {
           rel="noreferrer"
           className={$.show}
         >
-          <b className={$.date}>24/08 Paradiso met Captain</b>
+          <b className={$.date}>24/08 Paradiso X The Captain</b>
           <span className={$.title}>Café Paradiso, Alkmaar</span>
         </a>
         <a
@@ -44,7 +44,7 @@ const CalendarBlock: React.FC = () => {
           className={$.show}
         >
           <b className={$.date}>02/09 Bergen Live</b>
-          <span className={$.title}>Centrum Bergen, Alkmaar</span>
+          <span className={$.title}>Centrum Bergen</span>
         </a>
         <a
           href="https://volta-amsterdam.nl/"
