@@ -11,15 +11,6 @@ const CalendarBlock: React.FC = () => {
         </div>
         <h2 className={$.mobileHeader}>Opkomende gigs:</h2>
         <a
-          href="https://kompleks.nl/event/popmania/"
-          target="_blank"
-          rel="noreferrer"
-          className={$.show}
-        >
-          <b className={$.date}>23/09 Popmania</b>
-          <span className={$.title}>Kompleks, HHW</span>
-        </a>
-        <a
           href="https://www.facebook.com/radiothebasement/"
           target="_blank"
           rel="noreferrer"
@@ -27,6 +18,24 @@ const CalendarBlock: React.FC = () => {
         >
           <b className={$.date}>30/09 16:00 Radio optreden The Basement</b>
           <span className={$.title}>RTV80</span>
+        </a>
+        <a
+          href="https://www.facebook.com/radiothebasement/"
+          target="_blank"
+          rel="noreferrer"
+          className={$.show}
+        >
+          <b className={$.date}>10/11 Optreden met Allus</b>
+          <span className={$.title}>Bolletjescafé De Klok</span>
+        </a>
+        <a
+          href="https://www.facebook.com/radiothebasement/"
+          target="_blank"
+          rel="noreferrer"
+          className={$.show}
+        >
+          <b className={$.date}>15/12 Bandavond Kompleks</b>
+          <span className={$.title}>Heerhugowaard</span>
         </a>
       </div>
     </div>
