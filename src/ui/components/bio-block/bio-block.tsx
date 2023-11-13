@@ -15,8 +15,8 @@ const BioBlock: React.FC = () => {
           tot een zeskoppige vreugdebom die er alles aan doet om je te laten
           dansen en glimlachen. Met onze mix van catchy melodieën en
           aanstekelijke punkvibes proberen we jullie voetjes van de vloer te
-          krijgen. Onze herrie van de bovenste plank heeft ons zelfs de
-          felbegeerde Mixtream Contest publieksprijs van 2023 opgeleverd! Krappe
+          krijgen. Onze herrie van de bovenste plank heeft ons zelfs de Mixtream
+          Contest publieksprijs en Popmania eerste prijs opgeleverd! Krappe
           Sokken staat garant voor een explosie van muzikale blijheid die je
           niet wilt missen!
         </h2>

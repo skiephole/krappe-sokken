@@ -11,24 +11,6 @@ const CalendarBlock: React.FC = () => {
         </div>
         <h2 className={$.mobileHeader}>Opkomende gigs:</h2>
         <a
-          href="https://www.facebook.com/events/344389368050417"
-          target="_blank"
-          rel="noreferrer"
-          className={$.show}
-        >
-          <b className={$.date}>10/11 Optreden met Allus</b>
-          <span className={$.title}>Bolletjescafé De Klok</span>
-        </a>
-        <a
-          href="https://www.facebook.com/cafedebuurenburgerbrug"
-          target="_blank"
-          rel="noreferrer"
-          className={$.show}
-        >
-          <b className={$.date}>26/11 Optreden met Den Drommel</b>
-          <span className={$.title}>Café de Buuren</span>
-        </a>
-        <a
           href="https://www.facebook.com/events/1607130549813362"
           target="_blank"
           rel="noreferrer"

@@ -12,8 +12,8 @@ const BasePageView: React.FC = () => {
     <div className={$.container}>
       <Navigation />
       <IntroBlock />
-      <SoundCloudBlock />
       <CalendarBlock />
+      <SoundCloudBlock />
       <BioBlock />
       <GalleryBlock />
     </div>
