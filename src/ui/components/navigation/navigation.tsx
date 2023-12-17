@@ -1,6 +1,7 @@
 import type * as React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faFacebookSquare,
   faInstagram,
   faTiktok,
   faYoutube,
@@ -28,6 +29,15 @@ const Navigation: React.FC = () => {
           className={$.contactIcon}
         >
           <FontAwesomeIcon icon={faYoutube} size={isSmall ? "lg" : "2x"} />
+        </a>
+        <a
+          href="https://www.facebook.com/krappesokkenband/"
+          className={$.contactIcon}
+        >
+          <FontAwesomeIcon
+            icon={faFacebookSquare}
+            size={isSmall ? "lg" : "2x"}
+          />
         </a>
         <a
           href="https://www.instagram.com/krappesokkenband/"

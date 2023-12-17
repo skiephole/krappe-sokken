@@ -11,15 +11,6 @@ const CalendarBlock: React.FC = () => {
         </div>
         <h2 className={$.mobileHeader}>Opkomende gigs:</h2>
         <a
-          href="https://www.facebook.com/events/1607130549813362"
-          target="_blank"
-          rel="noreferrer"
-          className={$.show}
-        >
-          <b className={$.date}>15/12 Bandavond Kompleks</b>
-          <span className={$.title}>Heerhugowaard</span>
-        </a>
-        <a
           href="https://www.facebook.com/events/1092082198441401"
           target="_blank"
           rel="noreferrer"
@@ -27,6 +18,15 @@ const CalendarBlock: React.FC = () => {
         >
           <b className={$.date}>23/12 Bijna Kerst Festival</b>
           <span className={$.title}>J.C. de Dukdalf</span>
+        </a>
+        <a
+          href="https://www.coolkunstencultuur.nl/"
+          target="_blank"
+          rel="noreferrer"
+          className={$.show}
+        >
+          <b className={$.date}>13/01 Bandavond Cool</b>
+          <span className={$.title}>Cool kunst en cultuur</span>
         </a>
         <a
           href="https://www.twitch.tv/44nextdoor"
@@ -38,13 +38,22 @@ const CalendarBlock: React.FC = () => {
           <span className={$.title}>44NextDoor</span>
         </a>
         <a
-          href="https://www.hotelmarktstad.nl/"
+          href="https://www.hotelmarktstad.nl/agenda/den-drommel-en-krappe-sokken"
           target="_blank"
           rel="noreferrer"
           className={$.show}
         >
           <b className={$.date}>21/01 Optreden met Den Drommel</b>
           <span className={$.title}>Hotel Marktstad</span>
+        </a>
+        <a
+          href="https://www.podiumvictorie.nl/programma/alkmaars-eigenste-festival-2024"
+          target="_blank"
+          rel="noreferrer"
+          className={$.show}
+        >
+          <b className={$.date}>27/01 Alkmaars Eigenste</b>
+          <span className={$.title}>Podium Victorie Alkmaar</span>
         </a>
         <a
           href="https://www.facebook.com/liveenpuur/"
