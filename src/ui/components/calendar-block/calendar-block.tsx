@@ -11,15 +11,6 @@ const CalendarBlock: React.FC = () => {
         </div>
         <h2 className={$.mobileHeader}>Opkomende gigs:</h2>
         <a
-          href="https://www.facebook.com/events/1092082198441401"
-          target="_blank"
-          rel="noreferrer"
-          className={$.show}
-        >
-          <b className={$.date}>23/12 Bijna Kerst Festival</b>
-          <span className={$.title}>J.C. de Dukdalf</span>
-        </a>
-        <a
           href="https://www.coolkunstencultuur.nl/"
           target="_blank"
           rel="noreferrer"
@@ -27,15 +18,6 @@ const CalendarBlock: React.FC = () => {
         >
           <b className={$.date}>13/01 Bandavond Cool</b>
           <span className={$.title}>Cool kunst en cultuur</span>
-        </a>
-        <a
-          href="https://www.twitch.tv/44nextdoor"
-          target="_blank"
-          rel="noreferrer"
-          className={$.show}
-        >
-          <b className={$.date}>14/01 Livestream concert</b>
-          <span className={$.title}>44NextDoor</span>
         </a>
         <a
           href="https://www.hotelmarktstad.nl/agenda/den-drommel-en-krappe-sokken"
