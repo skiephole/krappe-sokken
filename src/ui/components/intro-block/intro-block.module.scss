@@ -44,8 +44,11 @@
 
 .contentWrap {
   width: 50%;
+  padding-top: 3rem;
+
   @include media-query(0, $breakpoint-medium) {
     width: 100%;
+    padding-top: 0;
   }
 }
 
@@ -53,7 +56,7 @@
   background: #ffffff;
   border: #000000 5px solid;
   border-radius: 25px;
-  margin: 2rem;
+  margin: 1rem 2rem;
   @include media-query($breakpoint-medium) {
     max-width: 75%;
   }
@@ -69,7 +72,7 @@
 .imageBubble {
   border: #000000 5px solid;
   border-radius: 25px;
-  margin: 2rem;
+  margin: 1rem 2rem;
   max-width: 75%;
   transition: width 1s ease-in-out;
   @include media-query(0, $breakpoint-medium) {
@@ -102,7 +105,7 @@ a {
 .button {
   display: flex;
   align-items: center;
-  padding: 16px;
+  padding: 0.5rem 1rem;
   background: #f95738;
   background-image: linear-gradient(
     to left,
@@ -138,10 +141,11 @@ a {
 .wrapper {
   display: flex;
   justify-content: center;
+  margin: 1rem 2rem;
+
   @include media-query($breakpoint-medium) {
     max-width: 75%;
   }
-  margin: 2rem;
 }
 
 @keyframes move {
