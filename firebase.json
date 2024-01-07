@@ -9,6 +9,13 @@
         "destination": "/index.html"
       }
     ],
+    "redirects": [
+      {
+        "source": "/karperton",
+        "destination": "https://distrokid.com/hyperfollow/krappesokken/karperton",
+        "type": 301
+      }
+    ],
     "rules": {
       ".read": "true",
       ".write": "true"

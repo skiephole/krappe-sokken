@@ -38,6 +38,15 @@ const CalendarBlock: React.FC = () => {
           <span className={$.title}>Podium Victorie Alkmaar</span>
         </a>
         <a
+          href="http://www.cafedepilaren.nl/index.html"
+          target="_blank"
+          rel="noreferrer"
+          className={$.show}
+        >
+          <b className={$.date}>08/02 Live optreden</b>
+          <span className={$.title}>Café de Pilaren Alkmaar</span>
+        </a>
+        <a
           href="https://www.facebook.com/liveenpuur/"
           target="_blank"
           rel="noreferrer"

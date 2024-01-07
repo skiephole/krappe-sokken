@@ -1,14 +1,16 @@
 import * as React from "react";
 import socks from "/logo512.png";
-import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { faAngleDown, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ref } from "@firebase/storage";
 import storage from "../../../firebase";
 import { getDownloadURL } from "firebase/storage";
 import { cx } from "../../../utils/join-class-names";
 import $ from "./intro-block.module.scss";
+import { useBreakpoints } from "app/hooks/use-window-width";
 
 const IntroBlock: React.FC = () => {
+  const { isSmall } = useBreakpoints();
   const [arrowShown, setArrowShown] = React.useState(true);
   const [groupImages, setGroupImages] = React.useState<string[]>([]);
   const [pending, setPending] = React.useState(false);
@@ -81,6 +83,21 @@ const IntroBlock: React.FC = () => {
               alt="groupImage"
             />
           )}
+          <a
+            className={$.wrapper}
+            href="https://distrokid.com/hyperfollow/krappesokken/karperton"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div className={$.button}>
+              Pre-save Karperton!
+              <FontAwesomeIcon
+                className={$.right}
+                icon={faChevronRight}
+                size="sm"
+              />
+            </div>
+          </a>
         </div>
       </div>
       <div className={cx($.indicator, !arrowShown && $.hide)}>

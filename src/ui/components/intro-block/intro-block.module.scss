@@ -10,11 +10,11 @@
 
 .welcome {
   display: flex;
-
   align-items: center;
   justify-content: center;
   height: 80%;
   width: 100%;
+
   @include media-query(0, $breakpoint-medium) {
     flex-direction: column;
   }
@@ -69,7 +69,6 @@
 .imageBubble {
   border: #000000 5px solid;
   border-radius: 25px;
-  max-width: 100%;
   margin: 2rem;
   max-width: 75%;
   transition: width 1s ease-in-out;
@@ -94,6 +93,55 @@
   top: 0px;
   left: 0px;
   animation: move 2s ease infinite;
+}
+
+a {
+  text-decoration: none;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background: #f95738;
+  background-image: linear-gradient(
+    to left,
+    transparent,
+    transparent 50%,
+    #9046cf 50%,
+    #9046cf
+  );
+  background-position: 100% 0;
+  background-size: 200% 100%;
+  transition: 0.8s;
+  cursor: pointer;
+  color: white;
+  text-shadow: 2px 2px 0px #563f3b;
+  text-transform: uppercase;
+  font-size: x-large;
+  font-weight: bold;
+  width: fit-content;
+  border-radius: 25px;
+  gap: 0.5rem;
+  filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5));
+
+  &:hover {
+    background-position: 0 0;
+    transition: 0.8s;
+  }
+}
+
+.right {
+  filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 1));
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  @include media-query($breakpoint-medium) {
+    max-width: 75%;
+  }
+  margin: 2rem;
 }
 
 @keyframes move {
