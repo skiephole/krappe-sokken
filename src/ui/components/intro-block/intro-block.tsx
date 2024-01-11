@@ -7,10 +7,8 @@ import storage from "../../../firebase";
 import { getDownloadURL } from "firebase/storage";
 import { cx } from "../../../utils/join-class-names";
 import $ from "./intro-block.module.scss";
-import { useBreakpoints } from "app/hooks/use-window-width";
 
 const IntroBlock: React.FC = () => {
-  const { isSmall } = useBreakpoints();
   const [arrowShown, setArrowShown] = React.useState(true);
   const [groupImages, setGroupImages] = React.useState<string[]>([]);
   const [pending, setPending] = React.useState(false);
