@@ -11,15 +11,6 @@ const CalendarBlock: React.FC = () => {
         </div>
         <h2 className={$.mobileHeader}>Opkomende gigs:</h2>
         <a
-          href="https://www.hotelmarktstad.nl/agenda/den-drommel-en-krappe-sokken"
-          target="_blank"
-          rel="noreferrer"
-          className={$.show}
-        >
-          <b className={$.date}>21/01 Optreden met Den Drommel</b>
-          <span className={$.title}>Hotel Marktstad</span>
-        </a>
-        <a
           href="https://www.podiumvictorie.nl/programma/alkmaars-eigenste-festival-2024"
           target="_blank"
           rel="noreferrer"
