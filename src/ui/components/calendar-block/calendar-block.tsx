@@ -11,21 +11,12 @@ const CalendarBlock: React.FC = () => {
         </div>
         <h2 className={$.mobileHeader}>Opkomende gigs:</h2>
         <a
-          href="https://www.podiumvictorie.nl/programma/alkmaars-eigenste-festival-2024"
-          target="_blank"
-          rel="noreferrer"
-          className={$.show}
-        >
-          <b className={$.date}>27/01 Alkmaars Eigenste</b>
-          <span className={$.title}>Podium Victorie Alkmaar</span>
-        </a>
-        <a
           href="http://www.cafedepilaren.nl/index.html"
           target="_blank"
           rel="noreferrer"
           className={$.show}
         >
-          <b className={$.date}>08/02 Live optreden</b>
+          <b className={$.date}>08/02 Live show</b>
           <span className={$.title}>Café de Pilaren Alkmaar</span>
         </a>
         <a
@@ -45,6 +36,15 @@ const CalendarBlock: React.FC = () => {
         >
           <b className={$.date}>29/02 Alkmaar Plugged Live </b>
           <span className={$.title}>Podium Victorie Alkmaar</span>
+        </a>
+        <a
+          href="https://www.facebook.com/events/382536104186726"
+          target="_blank"
+          rel="noreferrer"
+          className={$.show}
+        >
+          <b className={$.date}>26/04 Koningsnacht </b>
+          <span className={$.title}>Café Taverne Bergen</span>
         </a>
       </div>
     </div>
