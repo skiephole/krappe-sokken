@@ -10,7 +10,7 @@ const SoundCloudBlock: React.FC = () => {
     <div className={$.block}>
       <h1 className={$.header}>
         DEUNTJES&nbsp;
-        <span className={$.exclamation}>♫</span>
+        <span className={$.music}>♫</span>
       </h1>
       <div className={$.card}>
         <ReactPlayer
