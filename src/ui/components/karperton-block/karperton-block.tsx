@@ -1,12 +1,7 @@
-import * as React from "react";
-import socks from "/logo512.png";
-import {
-  faAngleDown,
-  faChevronRight,
-  faSpinner,
-} from "@fortawesome/free-solid-svg-icons";
+import React, { useState, useEffect } from "react";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ref } from "@firebase/storage";
+import { ref } from "firebase/storage";
 import storage from "../../../firebase";
 import { getDownloadURL } from "firebase/storage";
 import { cx } from "../../../utils/join-class-names";
@@ -17,80 +12,77 @@ import {
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 
-const KarpertonBlock: React.FC = () => {
-  const [arrowShown, setArrowShown] = React.useState(true);
-  const [image, setImage] = React.useState<string>();
-  const [pending, setPending] = React.useState(false);
+const KarpertonBlock = () => {
+  const [arrowShown, setArrowShown] = useState(true);
+  const [image, setImage] = useState<string | undefined>();
 
   const arrowVisibility = () => {
-    if (window.scrollY >= 200) {
-      setArrowShown(false);
-    }
+    setArrowShown(window.scrollY < 200);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
+    const getImage = async () => {
+      try {
+        const downloadUrl = await getDownloadURL(
+          ref(storage, `karperton-fotos/karperton-cover.jpg`)
+        );
+        setImage(downloadUrl || "");
+      } catch (error) {
+        console.error("Error fetching image:", error);
+      }
+    };
+
+    getImage();
+  }, []);
+
+  useEffect(() => {
     window.addEventListener("scroll", arrowVisibility);
 
     return () => window.removeEventListener("scroll", arrowVisibility);
   }, []);
 
-  const getImage = React.useCallback(() => {
-    const downloadUrl = getDownloadURL(
-      ref(storage, `karperton-fotos/karperton-cover.jpg`)
-    );
-
-    Promise.resolve(downloadUrl).then((url) => {
-      setImage(url);
-      setPending(false);
-    });
-  }, []);
-
-  React.useEffect(() => {
-    setPending(true);
-    getImage();
-  }, [getImage]);
-
   return (
     <div className={$.block}>
       <div className={$.release}>
-        {!pending && (
-          <div className={$.coverWrap}>
-            <img className={$.cover} src={image} alt="cover" />
-          </div>
-        )}
+        <div className={$.coverWrap}>
+          {image && (
+            <img className={$.cover} src={image} alt="Karperton single cover" />
+          )}
+        </div>
         <div className={$.contentWrap}>
           <div className={$.actions}>
             <div className={$.top}>
-              <a
-                className={$.wrapper}
-                href="https://open.spotify.com/track/5J2Pc5L0QJUoR3HhOjccN8"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <div className={cx($.button, $.spotify)}>
-                  Spotify
-                  <FontAwesomeIcon
-                    className={$.right}
-                    icon={faSpotify}
-                    size="sm"
-                  />
-                </div>
-              </a>
-              <a
-                className={$.wrapper}
-                href="https://youtu.be/3KAvKZXTXVg"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <div className={cx($.button, $.youtube)}>
-                  Youtube
-                  <FontAwesomeIcon
-                    className={$.right}
-                    icon={faYoutube}
-                    size="sm"
-                  />
-                </div>
-              </a>
+              {[
+                {
+                  url: "https://open.spotify.com/track/5J2Pc5L0QJUoR3HhOjccN8",
+                  icon: faSpotify,
+                  text: "Spotify",
+                  style: $.spotify,
+                },
+                {
+                  url: "https://youtu.be/3KAvKZXTXVg",
+                  icon: faYoutube,
+                  text: "Youtube",
+                  style: $.youtube,
+                },
+              ].map(({ url, icon, text, style }) => (
+                <a
+                  key={url}
+                  className={$.wrapper}
+                  href={url}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <div className={cx($.button, style)}>
+                    {text}
+                    <FontAwesomeIcon
+                      className={$.right}
+                      icon={icon}
+                      size="sm"
+                    />
+                  </div>
+                </a>
+              ))}
             </div>
             <a
               className={$.wrapper}

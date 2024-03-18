@@ -15,7 +15,7 @@ const SoundCloudBlock: React.FC = () => {
       <div className={$.card}>
         <ReactPlayer
           style={{ maxWidth: isSmall ? "70vw" : "80vw" }}
-          url="https://soundcloud.com/user-973743786/sets/live-at-rtv80-the-basement-300923?si=ffac1e32e38f4d9ea2eef2a42201edd4&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
+          url="https://soundcloud.com/user-973743786/sets/live-at-poprockradio-live-puur-220224?si=c23ad86db2c14c04a4b1b5748fe71a81&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
         />
       </div>
     </div>

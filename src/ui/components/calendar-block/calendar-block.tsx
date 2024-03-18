@@ -33,6 +33,15 @@ const CalendarBlock: React.FC = () => {
           <span className={$.title}>Alkmaar</span>
         </a>
         <a
+          href="https://tenwesten.nl/agenda/gas-erop-ska-punk-rock-disco-house/"
+          target="_blank"
+          rel="noreferrer"
+          className={$.show}
+        >
+          <b className={$.date}>12/04 GAS! EROP</b>
+          <span className={$.title}>Gasfabriek Alkmaar</span>
+        </a>
+        <a
           href="https://www.facebook.com/events/382536104186726"
           target="_blank"
           rel="noreferrer"
