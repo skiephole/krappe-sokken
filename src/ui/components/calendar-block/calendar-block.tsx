@@ -15,33 +15,6 @@ const CalendarBlock: React.FC = () => {
         </div>
         <h2 className={$.mobileHeader}>Opkomende gigs:</h2>
         <a
-          href="https://tenwesten.nl/agenda/gas-erop-ska-punk-rock-disco-house/"
-          target="_blank"
-          rel="noreferrer"
-          className={$.show}
-        >
-          <b className={$.date}>12/04 GAS! EROP</b>
-          <span className={$.title}>Gasfabriek Alkmaar</span>
-        </a>
-        <a
-          href="https://www.facebook.com/events/382536104186726"
-          target="_blank"
-          rel="noreferrer"
-          className={$.show}
-        >
-          <b className={$.date}>26/04 21:00 Koningsnacht </b>
-          <span className={$.title}>Café Taverne Bergen</span>
-        </a>
-        <a
-          href="https://hal25.nl/events/hofleverancier-25/"
-          target="_blank"
-          rel="noreferrer"
-          className={$.show}
-        >
-          <b className={$.date}>27/04 Koningsdag </b>
-          <span className={$.title}>HAL25 Alkmaar</span>
-        </a>
-        <a
           href="https://www.facebook.com/cafedebuurenburgerbrug?locale=nl_NL"
           target="_blank"
           rel="noreferrer"
@@ -59,6 +32,10 @@ const CalendarBlock: React.FC = () => {
           <b className={$.date}>12/05 13:00 Kunst en Cultuurweekend </b>
           <span className={$.title}>Koel 310 Alkmaar</span>
         </a>
+        <a href="/" target="_blank" rel="noreferrer" className={$.show}>
+          <b className={$.date}>18/05 15:00 Opening KunstKlub</b>
+          <span className={$.title}>Kunstuitleen Alkmaar</span>
+        </a>
         <a
           href="https://huisweidfestival.nl/"
           target="_blank"
@@ -67,6 +44,15 @@ const CalendarBlock: React.FC = () => {
         >
           <b className={$.date}>19/05 20:45 Huisweid Festival</b>
           <span className={$.title}>Tuitjenhorn</span>
+        </a>
+        <a
+          href="https://poppodiumb3.nl/"
+          target="_blank"
+          rel="noreferrer"
+          className={$.show}
+        >
+          <b className={$.date}>29/06 Optreden</b>
+          <span className={$.title}>Poppodium B3 Sint-Pancras</span>
         </a>
       </div>
     </div>
