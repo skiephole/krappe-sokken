@@ -38,7 +38,7 @@ const CalendarBlock: React.FC = () => {
           rel="noreferrer"
           className={$.show}
         >
-          <b className={$.date}>29/06 Optreden</b>
+          <b className={$.date}>29/06 Optreden Poppodium</b>
           <span className={$.title}>Poppodium B3 Sint-Pancras</span>
         </a>
       </div>
