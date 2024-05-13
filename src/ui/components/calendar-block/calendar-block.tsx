@@ -15,24 +15,11 @@ const CalendarBlock: React.FC = () => {
         </div>
         <h2 className={$.mobileHeader}>Opkomende gigs:</h2>
         <a
-          href="https://www.facebook.com/cafedebuurenburgerbrug?locale=nl_NL"
+          href="https://www.instagram.com/kunstklub2024/"
           target="_blank"
           rel="noreferrer"
           className={$.show}
         >
-          <b className={$.date}>11/05 Optreden </b>
-          <span className={$.title}>Café de Buuren Burgerbrug</span>
-        </a>
-        <a
-          href="https://kunstcultuurweekend.wixsite.com/kcwoudorp/festivals"
-          target="_blank"
-          rel="noreferrer"
-          className={$.show}
-        >
-          <b className={$.date}>12/05 13:00 Kunst en Cultuurweekend </b>
-          <span className={$.title}>Koel 310 Alkmaar</span>
-        </a>
-        <a href="/" target="_blank" rel="noreferrer" className={$.show}>
           <b className={$.date}>18/05 15:00 Opening KunstKlub</b>
           <span className={$.title}>Kunstuitleen Alkmaar</span>
         </a>
