@@ -1,7 +1,7 @@
 @import "../../styles/variables";
 
 .block {
-  background-color: #fee440;
+  background-color: #eaefd3;
   height: 100vh;
   width: 100%;
   max-width: 1440px;
@@ -106,13 +106,13 @@ a {
   display: flex;
   align-items: center;
   padding: 0.5rem 1rem;
-  background: #f95738;
+  background: #129490;
   background-image: linear-gradient(
     to left,
     transparent,
     transparent 50%,
-    #9046cf 50%,
-    #9046cf
+    #9c89b8 50%,
+    #9c89b8
   );
   background-position: 100% 0;
   background-size: 200% 100%;

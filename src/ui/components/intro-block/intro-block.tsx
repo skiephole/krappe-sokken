@@ -1,6 +1,6 @@
 import * as React from "react";
 import socks from "/logo512.png";
-import { faAngleDown, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ref } from "@firebase/storage";
 import storage from "../../../firebase";
@@ -70,8 +70,8 @@ const IntroBlock: React.FC = () => {
         <div className={$.contentWrap}>
           <div className={$.textBubble}>
             <h1 className={$.intro}>
-              Welkom soklovers ❤️ Wij zijn een 6-koppige indie pop/punk band uit
-              Alkmaar. Muzikale vreugde die je laat dansen en glimlachen!
+              Krappe Sokken, een 6-koppige indie band uit Alkmaar. Muzikale
+              vreugde die je laat dansen en glimlachen!
             </h1>
           </div>
           {groupImages && !pending && showImage && (
@@ -81,21 +81,6 @@ const IntroBlock: React.FC = () => {
               alt="groupImage"
             />
           )}
-          <a
-            className={$.wrapper}
-            href="https://distrokid.com/hyperfollow/krappesokken/karperton"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <div className={$.button}>
-              Pre-save Karperton!
-              <FontAwesomeIcon
-                className={$.right}
-                icon={faChevronRight}
-                size="sm"
-              />
-            </div>
-          </a>
         </div>
       </div>
       <div className={cx($.indicator, !arrowShown && $.hide)}>

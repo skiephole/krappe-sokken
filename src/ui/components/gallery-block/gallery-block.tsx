@@ -15,14 +15,10 @@ const GalleryBlock: React.FC = () => {
 
   const getGroupImages = React.useCallback(() => {
     const imageUrls = [
-      `karperton-fotos/foto_s krappe sokken-01.jpg`,
-      `karperton-fotos/foto_s krappe sokken-02.jpg`,
-      `karperton-fotos/foto_s krappe sokken-03.jpg`,
-      `karperton-fotos/foto_s krappe sokken-05.jpg`,
-      `karperton-fotos/foto_s krappe sokken-07.jpg`,
-      `karperton-fotos/foto_s krappe sokken-12.jpg`,
-      `karperton-fotos/foto_s krappe sokken-15.jpg`,
-      `karperton-fotos/foto_s krappe sokken-16.jpg`,
+      `2024/1.jpeg`,
+      `2024/2.jpeg`,
+      `2024/3.jpeg`,
+      `2024/4.jpeg`,
     ];
 
     const downloadUrls = imageUrls.map((url) =>
@@ -44,12 +40,12 @@ const GalleryBlock: React.FC = () => {
         <div className={$.slider}>
           {groupImages && (
             <SimpleImageSlider
-              width={isMedium ? 300 : 527}
-              height={isMedium ? 460 : 792}
+              width={isMedium ? 320 : 750}
+              height={isMedium ? 213 : 527}
               navStyle={1}
               images={groupImages}
               showBullets={false}
-              showNavs={true}
+              showNavs={false}
               autoPlay={true}
               autoPlayDelay={4}
             />
