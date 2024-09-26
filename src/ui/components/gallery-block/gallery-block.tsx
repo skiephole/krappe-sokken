@@ -45,7 +45,7 @@ const GalleryBlock: React.FC = () => {
               navStyle={1}
               images={groupImages}
               showBullets={false}
-              showNavs={false}
+              showNavs={true}
               autoPlay={true}
               autoPlayDelay={4}
             />

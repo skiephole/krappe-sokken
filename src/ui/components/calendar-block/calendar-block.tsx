@@ -16,49 +16,40 @@ const CalendarBlock: React.FC = () => {
           </div>
           <h2 className={$.mobileHeader}>Opkomende gigs:</h2>
           <a
-            href="https://www.eventbrite.nl/e/krappe-sokken-ep-release-tickets-920641753267?aff=oddtdtcreator"
+            href="https://museumnacht-alkmaar.nl/krappe-sokken/"
             target="_blank"
             rel="noreferrer"
             className={$.show}
           >
-            <b className={$.date}>05/07 EP Release Party</b>
-            <span className={$.title}>Stadsfabriek Alkmaar</span>
+            <b className={$.date}>28/09 Museumnacht</b>
+            <span className={$.title}>Stedelijk Museum, Alkmaar</span>
           </a>
           <a
-            href="https://www.facebook.com/kermiswh/?locale=nl_NL"
+            href="https://www.facebook.com/events/835425294860169?locale=nl_NL"
             target="_blank"
             rel="noreferrer"
             className={$.show}
           >
-            <b className={$.date}>19/08 Kermis optreden</b>
-            <span className={$.title}>Bolletjescafé de Klok, Warmenhuizen</span>
+            <b className={$.date}>04/10 Optreden met Diversion</b>
+            <span className={$.title}>Bierhuis, Alkmaar</span>
           </a>
           <a
-            href="https://taverneopenair.nl/"
+            href="https://adev.nu/"
             target="_blank"
             rel="noreferrer"
             className={$.show}
           >
-            <b className={$.date}>31/08 Taverne Open Air</b>
-            <span className={$.title}>HV Berdos, Bergen NH</span>
+            <b className={$.date}>19/10 Optreden ADEV</b>
+            <span className={$.title}>Binnenstad, Amsterdam</span>
           </a>
           <a
-            href="https://bergenlive.nl/"
+            href="https://www.regionaalarchiefalkmaar.nl/over-ons/agenda"
             target="_blank"
             rel="noreferrer"
             className={$.show}
           >
-            <b className={$.date}>07/09 Bergen Live</b>
-            <span className={$.title}>Centrum Bergen NH</span>
-          </a>
-          <a
-            href="https://www.facebook.com/events/1583553569112279?locale=nl_NL"
-            target="_blank"
-            rel="noreferrer"
-            className={$.show}
-          >
-            <b className={$.date}>14/09 Peperpop Festival</b>
-            <span className={$.title}>JC Cayen, Enkhuizen</span>
+            <b className={$.date}>30/11 Optreden Open Dag</b>
+            <span className={$.title}>Regionaal Archief, Alkmaar</span>
           </a>
         </div>
       </div>

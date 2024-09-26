@@ -1,5 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { faAngleDown, faMusic } from "@fortawesome/free-solid-svg-icons";
+import { useState, useEffect } from "react";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import {
+  faApple,
+  faSpotify,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { getDownloadURL, ref } from "@firebase/storage";
 import storage from "../../../firebase";
@@ -39,76 +44,64 @@ const ReleaseBlock = () => {
           <div className={$.coverWrap}>
             {image && (
               <img
+                loading="lazy"
                 className={$.cover}
                 src={image.url}
-                alt="Band members of Krappe Sokken"
+                alt="Band members of Krappe Sokken on the cover of our first EP Saturday Spice"
               />
             )}
           </div>
           <div className={$.contentWrap}>
-            {/* <div className={$.actions}>
-            <div className={$.top}>
-              {[
-                {
-                  url: "https://open.spotify.com/artist/2iqC2qUkuVcpj8eOfGeZCt?si=jtIbDQkAS5uOSZG-v-g6hA",
-                  icon: faSpotify,
-                  text: "Spotify",
-                  style: $.spotify,
-                },
-                {
-                  url: "https://www.youtube.com/@KrappeSokken",
-                  icon: faYoutube,
-                  text: "Youtube",
-                  style: $.youtube,
-                },
-              ].map(({ url, icon, text, style }) => (
-                <a
-                  key={url}
-                  className={$.wrapper}
-                  href={url}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <div className={cx($.button, style)}>
-                    {text}
-                    <FontAwesomeIcon
-                      className={$.right}
-                      icon={icon}
-                      size="sm"
-                    />
-                  </div>
-                </a>
-              ))}
-            </div>
-            <a
-              className={$.wrapper}
-              href="https://music.apple.com/us/artist/krappe-sokken/1722854990"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div className={cx($.button, $.apple)}>
-                Apple Music
-                <FontAwesomeIcon className={$.right} icon={faApple} size="sm" />
-              </div>
-            </a>
-          </div> */}
             <div className={$.textBubble}>
               <h1 className={$.intro}>
-                Pre-save our new EP "Saturday Spice" on all platforms!
+                Stream our first EP "Saturday Spice" on all platforms!
               </h1>
             </div>
             <div className={$.actions}>
+              <div className={$.top}>
+                {[
+                  {
+                    url: "https://open.spotify.com/album/4TJbuY2lcUP6QcLlevigPa?si=V7dgGwn2TUejnq3ow0hnCQ",
+                    icon: faSpotify,
+                    text: "Spotify",
+                    style: $.spotify,
+                  },
+                  {
+                    url: "https://www.youtube.com/watch?v=yCMl5GpNgVA&list=OLAK5uy_lehqulo6kWvXUQ7iF4px2cw92Zg-db9Hs",
+                    icon: faYoutube,
+                    text: "Youtube",
+                    style: $.youtube,
+                  },
+                ].map(({ url, icon, text, style }) => (
+                  <a
+                    key={url}
+                    className={$.wrapper}
+                    href={url}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <div className={cx($.button, style)}>
+                      {text}
+                      <FontAwesomeIcon
+                        className={$.right}
+                        icon={icon}
+                        size="sm"
+                      />
+                    </div>
+                  </a>
+                ))}
+              </div>
               <a
                 className={$.wrapper}
-                href="https://play.mw.fm/saturday-spice"
+                href="https://music.apple.com/dk/album/saturday-spice-ep/1753390346"
                 target="_blank"
                 rel="noreferrer"
               >
                 <div className={cx($.button, $.apple)}>
-                  Pre-save now!
+                  Apple Music
                   <FontAwesomeIcon
                     className={$.right}
-                    icon={faMusic}
+                    icon={faApple}
                     size="sm"
                   />
                 </div>

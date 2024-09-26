@@ -1,8 +1,8 @@
 import type * as React from "react";
 import { Spotify } from "react-spotify-embed";
-import $ from "./soundcloud-block.module.scss";
+import $ from "./music-block.module.scss";
 
-const SoundCloudBlock: React.FC = () => {
+const MusicBlock: React.FC = () => {
   return (
     <div className={$.background}>
       <div className={$.block}>
@@ -13,7 +13,7 @@ const SoundCloudBlock: React.FC = () => {
         <div className={$.card}>
           <Spotify
             style={{ maxWidth: "80vw", width: "100%" }}
-            link="https://open.spotify.com/album/0WYGJGzcAeKwaOjfHEZ2I0?si=zVrKe4r_TxiRBQ47pSjwMg"
+            link="https://open.spotify.com/album/4TJbuY2lcUP6QcLlevigPa?si=X6OIHVocRmOjVffw1f2-AA"
           />
         </div>
       </div>
@@ -21,4 +21,4 @@ const SoundCloudBlock: React.FC = () => {
   );
 };
 
-export default SoundCloudBlock;
+export default MusicBlock;
