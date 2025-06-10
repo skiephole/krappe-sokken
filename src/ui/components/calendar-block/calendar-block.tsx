@@ -16,40 +16,31 @@ const CalendarBlock: React.FC = () => {
           </div>
           <h2 className={$.mobileHeader}>Opkomende gigs:</h2>
           <a
-            href="https://museumnacht-alkmaar.nl/krappe-sokken/"
+            href="https://www.instagram.com/notyourmuse.event/"
             target="_blank"
             rel="noreferrer"
             className={$.show}
           >
-            <b className={$.date}>28/09 Museumnacht</b>
-            <span className={$.title}>Stedelijk Museum, Alkmaar</span>
+            <b className={$.date}>20/06 I'm Not Your Muse</b>
+            <span className={$.title}>Kapitaal, Utrecht</span>
           </a>
           <a
-            href="https://www.facebook.com/events/835425294860169?locale=nl_NL"
+            href="https://www.instagram.com/rock_in_colour?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
             target="_blank"
             rel="noreferrer"
             className={$.show}
           >
-            <b className={$.date}>04/10 Optreden met Diversion</b>
-            <span className={$.title}>Bierhuis, Alkmaar</span>
+            <b className={$.date}>21/06 Rock in Colour</b>
+            <span className={$.title}>De Letterbak, Alkmaar</span>
           </a>
           <a
-            href="https://adev.nu/"
+            href="https://www.facebook.com/BolletjescafeDeKlokWH/events?locale=nl_NL"
             target="_blank"
             rel="noreferrer"
             className={$.show}
           >
-            <b className={$.date}>19/10 Optreden ADEV</b>
-            <span className={$.title}>Binnenstad, Amsterdam</span>
-          </a>
-          <a
-            href="https://www.regionaalarchiefalkmaar.nl/over-ons/agenda"
-            target="_blank"
-            rel="noreferrer"
-            className={$.show}
-          >
-            <b className={$.date}>30/11 Optreden Open Dag</b>
-            <span className={$.title}>Regionaal Archief, Alkmaar</span>
+            <b className={$.date}>18/08 Kermis optreden</b>
+            <span className={$.title}>De Klok, Warmenhuizen</span>
           </a>
         </div>
       </div>

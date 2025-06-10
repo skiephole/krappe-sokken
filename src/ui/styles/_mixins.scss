@@ -1,4 +1,5 @@
 @use "sass:math";
+@use "sass:string";
 
 // -----------
 // media mixin
@@ -17,11 +18,11 @@
   $query: "screen";
 
   @if $from {
-    $query: unquote("#{$query} and (min-width: #{$from})");
+    $query: string.unquote("#{$query} and (min-width: #{$from})");
   }
 
   @if $to {
-    $query: unquote("#{$query} and (max-width: #{$to - 1px})");
+    $query: string.unquote("#{$query} and (max-width: #{$to - 1px})");
   }
 
   @media #{$query} {
@@ -112,16 +113,16 @@ $static-url: "/static/";
 @mixin light-gradient($direction) {
   background: linear-gradient(
     $direction,
-    var(--light-grandient-from) 10%,
-    var(--light-grandient-to)
+    var(--light-gradient-from) 10%,
+    var(--light-gradient-to)
   );
 }
 
 @mixin colored-gradient($direction) {
   background: linear-gradient(
     $direction,
-    var(--colored-grandient-from),
-    var(--colored-grandient-to)
+    var(--colored-gradient-from),
+    var(--colored-gradient-to)
   );
 }
 

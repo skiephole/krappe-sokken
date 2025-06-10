@@ -6,7 +6,7 @@ import {
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { getDownloadURL, ref } from "@firebase/storage";
+import { getDownloadURL, ref } from "firebase/storage";
 import storage from "../../../firebase";
 import { cx } from "../../../utils/join-class-names";
 import $ from "./release-block.module.scss";
@@ -44,7 +44,6 @@ const ReleaseBlock = () => {
           <div className={$.coverWrap}>
             {image && (
               <img
-                loading="lazy"
                 className={$.cover}
                 src={image.url}
                 alt="Band members of Krappe Sokken on the cover of our first EP Saturday Spice"

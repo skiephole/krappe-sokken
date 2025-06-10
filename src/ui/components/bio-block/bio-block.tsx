@@ -13,7 +13,7 @@ const BioBlock: React.FC = () => {
           <h2 className={$.bio}>
             Krappe Sokken, een energieke indie band uit de omgeving Alkmaar. Na
             ons ontstaan in het najaar van 2022 zijn wij uitgekiemd tot een
-            zeskoppige vreugdebom die er alles aan doet om je te laten dansen en
+            vreugdebom die er alles aan doet om je te laten dansen en
             glimlachen. Met onze mix van sfeervolle nummers en aanstekelijke
             feel-good vibes proberen we jullie voetjes van de vloer te krijgen.
             Onze muziek heeft ons zelfs de Mixtream Contest publieksprijs en

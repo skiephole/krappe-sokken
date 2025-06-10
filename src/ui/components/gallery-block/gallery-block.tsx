@@ -1,5 +1,5 @@
 import * as React from "react";
-import { getDownloadURL, ref } from "@firebase/storage";
+import { getDownloadURL, ref } from "firebase/storage";
 import storage from "../../../firebase";
 import SimpleImageSlider from "react-simple-image-slider";
 import $ from "./gallery-block.module.scss";
@@ -12,31 +12,64 @@ type GroupImage = {
 const GalleryBlock: React.FC = () => {
   const { isMedium } = useBreakpoints();
   const [groupImages, setGroupImages] = React.useState<GroupImage[]>();
+  const [isVisible, setIsVisible] = React.useState(false);
+  const galleryRef = React.useRef<HTMLDivElement>(null);
 
   const getGroupImages = React.useCallback(() => {
-    const imageUrls = [
+    const webpUrls = [
+      `2024/1.webp`,
+      `2024/2.webp`,
+      `2024/3.webp`,
+      `2024/4.webp`,
+    ];
+
+    const jpegUrls = [
       `2024/1.jpeg`,
       `2024/2.jpeg`,
       `2024/3.jpeg`,
       `2024/4.jpeg`,
     ];
 
-    const downloadUrls = imageUrls.map((url) =>
-      getDownloadURL(ref(storage, url))
+    const downloadPromises = webpUrls.map((url, index) =>
+      getDownloadURL(ref(storage, url)).catch(() =>
+        getDownloadURL(ref(storage, jpegUrls[index]))
+      )
     );
 
-    Promise.all(downloadUrls).then((urls) => {
+    Promise.all(downloadPromises).then((urls) => {
       setGroupImages(urls.map((url) => ({ url: url })));
     });
   }, []);
 
   React.useEffect(() => {
-    getGroupImages();
-  }, [getGroupImages]);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (galleryRef.current) {
+      observer.observe(galleryRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  React.useEffect(() => {
+    if (isVisible) {
+      getGroupImages();
+    }
+  }, [isVisible, getGroupImages]);
 
   return (
     <div className={$.block}>
-      <div className={$.gallery}>
+      <div className={$.gallery} ref={galleryRef}>
         <div className={$.slider}>
           {groupImages && (
             <SimpleImageSlider

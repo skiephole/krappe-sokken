@@ -7,7 +7,7 @@ const MusicBlock: React.FC = () => {
     <div className={$.background}>
       <div className={$.block}>
         <h1 className={$.header}>
-          RELEASES&nbsp;
+          ONZE NIEUWSTE RELEASE&nbsp;
           <span className={$.music}>♫</span>
         </h1>
         <div className={$.card}>

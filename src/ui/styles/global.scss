@@ -1,5 +1,5 @@
 // helpers
-@import "variables";
+@use "variables" as *;
 
 #app {
   z-index: 0;
