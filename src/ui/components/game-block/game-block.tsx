@@ -613,7 +613,7 @@ const GameBlock: React.FC = () => {
       }
 
       // Update all-time high score in Firebase if needed
-      if (currentScore > allTimeHighScore) {
+      if (allTimeHighScore && currentScore > allTimeHighScore) {
         updateAllTimeHighScore(currentScore);
       }
 
