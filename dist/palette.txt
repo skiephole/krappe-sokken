@@ -33,3 +33,12 @@
   <color name="Dark purple" hex="27233a" r="39" g="35" b="58" />
   <color name="Pumpkin" hex="ff8c42" r="255" g="140" b="66" />
 </palette>
+
+New palette
+
+<palette>
+  <color name="Cyan " hex="00FFFF"/>
+  <color name="Magenta" hex="FF00FF"/>
+  <color name="Electric Red" hex="FF0040"/>
+  <color name="Deep Navy" hex="0D1B2A"/>
+</palette>

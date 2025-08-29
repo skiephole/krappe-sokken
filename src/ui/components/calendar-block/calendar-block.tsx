@@ -16,31 +16,31 @@ const CalendarBlock: React.FC = () => {
           </div>
           <h2 className={$.mobileHeader}>Opkomende gigs:</h2>
           <a
-            href="https://www.instagram.com/notyourmuse.event/"
+            href="https://remindthegap.nl/"
             target="_blank"
             rel="noreferrer"
             className={$.show}
           >
-            <b className={$.date}>20/06 I'm Not Your Muse</b>
-            <span className={$.title}>Kapitaal, Utrecht</span>
+            <b className={$.date}>13/09 ReMind The Gap Festival</b>
+            <span className={$.title}>De Goorn</span>
           </a>
           <a
-            href="https://www.instagram.com/rock_in_colour?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            href="https://www.cpunt.nl/agenda/frisse-duyck-lux-the-kruuk-krappe-sokken"
             target="_blank"
             rel="noreferrer"
             className={$.show}
           >
-            <b className={$.date}>21/06 Rock in Colour</b>
-            <span className={$.title}>De Letterbak, Alkmaar</span>
+            <b className={$.date}>25/09 Frisse Duyck</b>
+            <span className={$.title}>Cpunt, Hoofddorp</span>
           </a>
           <a
-            href="https://www.facebook.com/BolletjescafeDeKlokWH/events?locale=nl_NL"
+            href="https://manifesto-hoorn.nl/productie/doemaar/"
             target="_blank"
             rel="noreferrer"
             className={$.show}
           >
-            <b className={$.date}>18/08 Kermis optreden</b>
-            <span className={$.title}>De Klok, Warmenhuizen</span>
+            <b className={$.date}>26/09 Voorprogramma Doe Maar Tribute</b>
+            <span className={$.title}>Manifesto, Hoorn</span>
           </a>
         </div>
       </div>

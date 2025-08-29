@@ -32,7 +32,6 @@ const GameBlock: React.FC = () => {
   });
   const [allTimeHighScore, setAllTimeHighScore] = React.useState(0);
 
-  // Fetch all-time high score from Firebase
   const fetchAllTimeHighScore = React.useCallback(async () => {
     try {
       const highScoreRef = ref(database, "highScore");
@@ -45,7 +44,6 @@ const GameBlock: React.FC = () => {
     }
   }, []);
 
-  // Update all-time high score in Firebase
   const updateAllTimeHighScore = React.useCallback(async (newScore: number) => {
     try {
       const highScoreRef = ref(database, "highScore");
@@ -74,10 +72,10 @@ const GameBlock: React.FC = () => {
     const context = canvas.getContext("2d")!;
 
     const gradient = context.createLinearGradient(0, 0, canvas.width, 0);
-    gradient.addColorStop(0.05, "rgba(156, 137, 184, 1)");
-    gradient.addColorStop(0.33, "rgba(18, 148, 144, 1)");
-    gradient.addColorStop(0.66, "rgba(255, 140, 66, 1)");
-    gradient.addColorStop(0.9, "rgba(156, 137, 184, 1)");
+    gradient.addColorStop(0.05, "rgba(21, 19, 107, 1)");
+    gradient.addColorStop(0.3, "rgba(145, 0, 9, 1)");
+    gradient.addColorStop(0.7, "rgba(20, 17, 98, 1)");
+    gradient.addColorStop(0.9, "rgba(21, 19, 107, 1)");
 
     context.fillStyle = gradient;
     context.fillRect(0, 0, canvas.width, canvas.height);
@@ -87,17 +85,14 @@ const GameBlock: React.FC = () => {
     texture.wrapT = THREE.RepeatWrapping;
     scene.background = texture;
 
-    // Camera setup
     const camera = new THREE.PerspectiveCamera(75, 800 / 400, 0.1, 1000);
     camera.position.set(0, 2, 5);
 
-    // Renderer setup
     const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(800, 400);
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
-    // Clear any existing canvas
     while (mountRef.current.firstChild) {
       mountRef.current.removeChild(mountRef.current.firstChild);
     }
@@ -105,7 +100,6 @@ const GameBlock: React.FC = () => {
     mountRef.current.appendChild(renderer.domElement);
     console.log("Canvas appended to DOM");
 
-    // Lighting
     const ambientLight = new THREE.AmbientLight(0x404040, 1);
     scene.add(ambientLight);
 
@@ -116,10 +110,8 @@ const GameBlock: React.FC = () => {
     directionalLight.shadow.mapSize.height = 2048;
     scene.add(directionalLight);
 
-    // Create hilly ground with gradient colors
     const groundGroup = new THREE.Group();
 
-    // Function to create gradient texture
     const createGradientTexture = (color1: string, color2: string) => {
       const canvas = document.createElement("canvas");
       canvas.width = 256;
@@ -136,7 +128,6 @@ const GameBlock: React.FC = () => {
       return new THREE.CanvasTexture(canvas);
     };
 
-    // Create multiple ground segments with different heights and gradient colors
     const groundGradients = [
       { color1: "rgba(34, 139, 34, 1)", color2: "rgba(0, 100, 0, 1)" }, // Forest Green gradient
       { color1: "rgba(50, 205, 50, 1)", color2: "rgba(34, 139, 34, 1)" }, // Lime Green gradient
@@ -183,10 +174,8 @@ const GameBlock: React.FC = () => {
 
     scene.add(groundGroup);
 
-    // Player (non-binary person - simple geometric representation)
     const playerGroup = new THREE.Group();
 
-    // Body
     const bodyGeometry = new THREE.CylinderGeometry(0.3, 0.4, 1.2, 8);
     const bodyMaterial = new THREE.MeshLambertMaterial({ color: 0x8a2be2 }); // Purple
     const body = new THREE.Mesh(bodyGeometry, bodyMaterial);
@@ -259,29 +248,24 @@ const GameBlock: React.FC = () => {
       lastObstacleSpawn: 0,
     };
 
-    // Spawn initial background elements for the first view
     for (let i = 0; i < 3; i++) {
       const backgroundGroup = new THREE.Group();
 
-      // Randomly choose between sock-tree and sock-bush
       const svgFiles = ["/sock-tree.svg", "/sock-bush.svg"];
       const randomSvg = svgFiles[Math.floor(Math.random() * svgFiles.length)];
 
-      // Random size variation
       const scale = 2 + Math.random() * 1.2;
 
-      // Load SVG as texture
       const loader = new THREE.TextureLoader();
       loader.load(
         randomSvg,
         (texture) => {
-          // Create plane geometry for the background element
           const elementGeometry = new THREE.PlaneGeometry(2 * scale, 2 * scale);
           const elementMaterial = new THREE.MeshBasicMaterial({
             map: texture,
             transparent: true,
             alphaTest: 0.1,
-            color: 0xc4c4c4, // Darken by applying a gray tint
+            color: 0xc4c4c4,
           });
 
           const element = new THREE.Mesh(elementGeometry, elementMaterial);
@@ -291,7 +275,6 @@ const GameBlock: React.FC = () => {
 
           backgroundGroup.add(element);
 
-          // Re-render after texture loads
           renderer.render(scene, camera);
         },
         undefined,
@@ -303,7 +286,6 @@ const GameBlock: React.FC = () => {
         }
       );
 
-      // Position elements across the initial view
       const randomY = -0.75;
       const randomZ = -2 - Math.random() * 3;
       const xPosition = -4 + i * 4 + Math.random() * 2; // Spread across x: 2-14
@@ -313,7 +295,6 @@ const GameBlock: React.FC = () => {
       gameRef.current.backgroundElements.push(backgroundGroup);
     }
 
-    // Initial render
     renderer.render(scene, camera);
     console.log("Game initialized and rendered");
   }, []);
@@ -321,30 +302,25 @@ const GameBlock: React.FC = () => {
   const createObstacle = () => {
     if (!gameRef.current) return;
 
-    // Check if there's already an obstacle too close
     const lastObstacle =
       gameRef.current.obstacles[gameRef.current.obstacles.length - 1];
     if (lastObstacle && lastObstacle.position.x > 3) {
-      return; // Don't spawn if the last obstacle is still too close
+      return;
     }
 
-    // Update last spawn position
     gameRef.current.lastObstacleSpawn = 8;
 
-    // Create sock pile using SVG texture
     const obstacleGroup = new THREE.Group();
 
-    // Load SVG as texture
     const loader = new THREE.TextureLoader();
     loader.load(
       "/sock-pile.svg",
       (texture) => {
-        // Create plane geometry for the 2D sock pile
         const sockGeometry = new THREE.PlaneGeometry(1.8, 1.8);
         const sockMaterial = new THREE.MeshBasicMaterial({
           map: texture,
           transparent: true,
-          alphaTest: 0.1, // Darken by applying a gray tint
+          alphaTest: 0.1,
           color: 0x9d9d9d,
         });
 
@@ -359,7 +335,6 @@ const GameBlock: React.FC = () => {
       (error) => {
         console.error("Error loading sock pile SVG:", error);
 
-        // Fallback to a simple colored plane if SVG fails to load
         const fallbackGeometry = new THREE.PlaneGeometry(1.0, 0.8);
         const fallbackMaterial = new THREE.MeshLambertMaterial({
           color: 0xff6b6b,
@@ -383,7 +358,7 @@ const GameBlock: React.FC = () => {
     });
     const collisionBox = new THREE.Mesh(collisionGeometry, collisionMaterial);
     collisionBox.position.set(0, 0.5, 0);
-    collisionBox.userData = { isCollisionBox: true }; // Mark as collision box
+    collisionBox.userData = { isCollisionBox: true };
     obstacleGroup.add(collisionBox);
 
     obstacleGroup.position.set(8, gameRef.current.groundY - 0.8, 0);
@@ -396,25 +371,21 @@ const GameBlock: React.FC = () => {
 
     const backgroundGroup = new THREE.Group();
 
-    // Randomly choose between sock-tree and sock-bush
     const svgFiles = ["/sock-tree.svg", "/sock-bush.svg"];
     const randomSvg = svgFiles[Math.floor(Math.random() * svgFiles.length)];
 
-    // Random size variation
-    const scale = 2 + Math.random() * 1.2; // Scale between 0.8 and 1.4
+    const scale = 2 + Math.random() * 1.2;
 
-    // Load SVG as texture
     const loader = new THREE.TextureLoader();
     loader.load(
       randomSvg,
       (texture) => {
-        // Create plane geometry for the background element
         const elementGeometry = new THREE.PlaneGeometry(2 * scale, 2 * scale);
         const elementMaterial = new THREE.MeshBasicMaterial({
           map: texture,
           transparent: true,
           alphaTest: 0.1,
-          color: 0xc4c4c4, // Darken by applying a gray tint
+          color: 0xc4c4c4,
         });
 
         const element = new THREE.Mesh(elementGeometry, elementMaterial);
@@ -430,9 +401,8 @@ const GameBlock: React.FC = () => {
       }
     );
 
-    // Random positioning
-    const randomY = -0.75; // Random Y between -0.5 and 1.5
-    const randomZ = -2 - Math.random() * 3; // Random Z between -2 and -5 (behind player)
+    const randomY = -0.75;
+    const randomZ = -2 - Math.random() * 3;
 
     backgroundGroup.position.set(
       15,
@@ -456,7 +426,6 @@ const GameBlock: React.FC = () => {
     const playerBox = new THREE.Box3().setFromObject(gameRef.current.player);
 
     for (const obstacle of gameRef.current.obstacles) {
-      // Find the collision box within the obstacle group
       const collisionBox = obstacle.children.find(
         (child) => child.userData.isCollisionBox
       );
@@ -474,16 +443,13 @@ const GameBlock: React.FC = () => {
   const gameLoop = () => {
     if (!gameRef.current || !gameRef.current.gameRunning) return;
 
-    // Move background gradient
     gameRef.current.backgroundTexture.offset.x +=
-      gameRef.current.gameSpeed * 0.05; // Slow background movement
+      gameRef.current.gameSpeed * 0.05;
     gameRef.current.backgroundTexture.needsUpdate = true;
 
-    // Move obstacles
     gameRef.current.obstacles.forEach((obstacle, index) => {
       obstacle.position.x -= gameRef.current!.gameSpeed;
 
-      // Remove obstacles that are off screen
       if (obstacle.position.x < -10) {
         gameRef.current!.scene.remove(obstacle);
         gameRef.current!.obstacles.splice(index, 1);
@@ -492,32 +458,26 @@ const GameBlock: React.FC = () => {
       }
     });
 
-    // Move background elements (slower than obstacles for parallax effect)
     gameRef.current.backgroundElements.forEach((element, index) => {
-      element.position.x -= gameRef.current!.gameSpeed * 0.6; // 60% of obstacle speed
+      element.position.x -= gameRef.current!.gameSpeed * 0.6;
 
-      // Remove background elements that are off screen
       if (element.position.x < -15) {
         gameRef.current!.scene.remove(element);
         gameRef.current!.backgroundElements.splice(index, 1);
       }
     });
 
-    // Move ground segments
     gameRef.current.groundSegments.forEach((segment, index) => {
       segment.position.x -= gameRef.current!.gameSpeed;
 
-      // Remove ground segments that are off screen and create new ones
       if (segment.position.x < -50) {
         gameRef.current!.scene.remove(segment);
         gameRef.current!.groundSegments.splice(index, 1);
 
-        // Create new ground segment at the end
         const segmentWidth = 8;
         const segmentHeight = 2 + Math.random() * 3;
         const segmentDepth = 15;
 
-        // Function to create gradient texture (reused from init)
         const createGradientTexture = (color1: string, color2: string) => {
           const canvas = document.createElement("canvas");
           canvas.width = 256;
@@ -535,11 +495,11 @@ const GameBlock: React.FC = () => {
         };
 
         const groundGradients = [
-          { color1: "rgba(34, 139, 34, 1)", color2: "rgba(0, 100, 0, 1)" }, // Forest Green gradient
-          { color1: "rgba(50, 205, 50, 1)", color2: "rgba(34, 139, 34, 1)" }, // Lime Green gradient
-          { color1: "rgba(144, 238, 144, 1)", color2: "rgba(50, 205, 50, 1)" }, // Light Green gradient
-          { color1: "rgba(154, 205, 50, 1)", color2: "rgba(107, 142, 35, 1)" }, // Yellow Green gradient
-          { color1: "rgba(107, 142, 35, 1)", color2: "rgba(85, 107, 47, 1)" }, // Olive Drab gradient
+          { color1: "rgba(0, 255, 255, 1)", color2: "rgba(255, 0, 255, 1)" }, // Cyan to Magenta gradient
+          { color1: "rgba(255, 0, 64, 1)", color2: "rgba(13, 27, 42, 1)" }, // Electric Red to Deep Navy gradient
+          { color1: "rgba(255, 0, 255, 1)", color2: "rgba(0, 255, 255, 1)" }, // Magenta to Cyan gradient
+          { color1: "rgba(13, 27, 42, 1)", color2: "rgba(255, 0, 64, 1)" }, // Deep Navy to Electric Red gradient
+          { color1: "rgba(0, 255, 255, 1)", color2: "rgba(255, 0, 64, 1)" }, // Cyan to Electric Red gradient
         ];
 
         const segmentGeometry = new THREE.BoxGeometry(
@@ -575,10 +535,9 @@ const GameBlock: React.FC = () => {
       }
     });
 
-    // Handle jumping
     if (gameRef.current.isJumping) {
       gameRef.current.player.position.y += gameRef.current.jumpVelocity;
-      gameRef.current.jumpVelocity -= 0.008; // Gravity
+      gameRef.current.jumpVelocity -= 0.008;
 
       if (gameRef.current.player.position.y <= gameRef.current.groundY) {
         gameRef.current.player.position.y = gameRef.current.groundY;
@@ -587,32 +546,27 @@ const GameBlock: React.FC = () => {
       }
     }
 
-    // Spawn obstacles with better spacing control
-    const shouldSpawn = Math.random() < 0.008; // Slightly lower spawn rate
+    const shouldSpawn = Math.random() < 0.008;
     if (shouldSpawn) {
       createObstacle();
     }
 
-    // Spawn background elements randomly (less frequent than obstacles)
-    const shouldSpawnBackground = Math.random() < 0.025; // Even lower spawn rate
+    const shouldSpawnBackground = Math.random() < 0.025;
     if (shouldSpawnBackground) {
       createBackgroundElement();
     }
 
-    // Check collision
     if (checkCollision()) {
       gameRef.current.gameRunning = false;
       setGameOver(true);
 
       const currentScore = gameRef.current.score;
 
-      // Update local high score
       if (currentScore > highScore) {
         setHighScore(currentScore);
         localStorage.setItem("sockJumpHighScore", currentScore.toString());
       }
 
-      // Update all-time high score in Firebase if needed
       if (allTimeHighScore && currentScore > allTimeHighScore) {
         updateAllTimeHighScore(currentScore);
       }
@@ -620,7 +574,6 @@ const GameBlock: React.FC = () => {
       return;
     }
 
-    // Increase game speed gradually
     gameRef.current.gameSpeed += 0.0001;
 
     gameRef.current.renderer.render(
@@ -633,7 +586,6 @@ const GameBlock: React.FC = () => {
   const startGame = () => {
     if (!gameRef.current) return;
 
-    // Reset game state
     gameRef.current.obstacles.forEach((obstacle) => {
       gameRef.current!.scene.remove(obstacle);
     });
@@ -719,11 +671,9 @@ const GameBlock: React.FC = () => {
 
             <div className={$.gameUI}>
               <div className={$.scoreBoard}>
-                <div className={$.currentScore}>Score: {score}</div>
-                <div className={$.highScore}>High Score: {highScore}</div>
-                <div className={$.highScore}>
-                  All Time High Score: {allTimeHighScore || "-"}
-                </div>
+                <div>Score: {score}</div>
+                <div>High Score: {highScore}</div>
+                <div>All Time High Score: {allTimeHighScore || "-"}</div>
               </div>
 
               {!gameStarted && (
@@ -744,7 +694,7 @@ const GameBlock: React.FC = () => {
                     <p className={$.newRecord}>Nieuwe High Score! 🎉</p>
                   )}
                   <button className={$.restartButton} onClick={startGame}>
-                    SPEL OPNIEUW
+                    SPEEL OPNIEUW
                   </button>
                 </div>
               )}

@@ -1,13 +1,18 @@
 @use "../../styles/variables" as *;
 
 .block {
-  background-color: #129490;
+  background-color: #15136b;
   height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 1000px;
+
+  @include media-query(0, $breakpoint-medium) {
+    height: 60vh;
+    min-height: 600px;
+  }
 }
 
 .footer {
@@ -16,8 +21,9 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #000000;
+  color: white;
   margin-bottom: 1rem;
+
   @include media-query(0, $breakpoint-medium) {
     flex-direction: column;
   }
@@ -25,7 +31,12 @@
 
 .link {
   text-decoration: none;
-  color: #000000;
+  color: white;
+}
+
+.linkWies {
+  text-decoration: none;
+  color: black;
 }
 
 .gallery {

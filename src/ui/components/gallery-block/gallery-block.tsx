@@ -17,16 +17,16 @@ const GalleryBlock: React.FC = () => {
 
   const getGroupImages = React.useCallback(() => {
     const webpUrls = [
-      `2024/1.webp`,
+      `2025/1.webp`,
+      `2025/12.webp`,
       `2024/2.webp`,
-      `2024/3.webp`,
       `2024/4.webp`,
     ];
 
     const jpegUrls = [
-      `2024/1.jpeg`,
+      `2025/1.jpg`,
+      `2025/12.jpeg`,
       `2024/2.jpeg`,
-      `2024/3.jpeg`,
       `2024/4.jpeg`,
     ];
 
@@ -86,12 +86,21 @@ const GalleryBlock: React.FC = () => {
           <p>
             Foto's door{" "}
             <a
-              className={$.link}
+              className={$.linkWies}
               href="https://www.instagram.com/6wies/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <b>@6wies ❤️</b>
+              <b>@6wies</b>
+            </a>{" "}
+            en{" "}
+            <a
+              className={$.linkWies}
+              href="https://www.instagram.com/lola.pronk"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <b>@lola.pronk ❤️</b>
             </a>
           </p>
         </div>

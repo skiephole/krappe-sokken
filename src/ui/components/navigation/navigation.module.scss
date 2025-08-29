@@ -6,7 +6,7 @@
   top: 0;
   left: 0;
   z-index: 100;
-  background-color: #9c89b8;
+  background-color: #910009;
   opacity: 0.95;
   padding-bottom: 1rem;
   clip-path: polygon(
@@ -73,6 +73,15 @@
   );
 }
 
+.navigation::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 30%, #670007 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
 .inner {
   display: flex;
   justify-content: space-between;
@@ -112,4 +121,8 @@
   font-weight: bold;
   color: black;
   text-decoration: none;
+
+  @include media-query(0, $breakpoint-medium) {
+    font-size: large;
+  }
 }

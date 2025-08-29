@@ -33,40 +33,26 @@ const IntroBlock: React.FC = () => {
 
   const getGroupImages = React.useCallback(() => {
     // Define both low and high quality image URLs
-    const smallImageUrls = [`2024/small_1.webp`, `2024/small_4.webp`];
-    const highQualityUrls = [`2024/1.webp`, `2024/4.webp`];
+    const highQualityUrls = [`2025/1.jpg`, `2025/12.jpeg`];
     // Fallbacks if WebP not available
     const fallbackUrls = [`2024/1.jpeg`, `2024/4.jpeg`];
 
-    // First try to get small placeholder images
-    const smallImagesPromise = smallImageUrls.map((url, index) =>
+    const highQualityPromise = highQualityUrls.map((url, index) =>
       getDownloadURL(ref(storage, url)).catch(() =>
         getDownloadURL(ref(storage, fallbackUrls[index]))
       )
     );
 
-    // Then load high quality images
-    Promise.all(smallImagesPromise)
-      .then((smallUrls) => {
-        // First set the small images for quick display
-        setGroupImages(smallUrls);
-        setPending(false);
-
-        // Then load high quality images in the background
-        const highQualityPromise = highQualityUrls.map((url, index) =>
-          getDownloadURL(ref(storage, url)).catch(() =>
-            getDownloadURL(ref(storage, fallbackUrls[index]))
-          )
-        );
-
-        return Promise.all(highQualityPromise);
-      })
+    Promise.all(highQualityPromise)
       .then((highQualityUrls) => {
         // Replace with high quality images when ready
         setGroupImages(highQualityUrls);
       })
       .catch((error) => {
         console.error("Error loading images:", error);
+        setPending(false);
+      })
+      .finally(() => {
         setPending(false);
       });
   }, []);
@@ -99,10 +85,10 @@ const IntroBlock: React.FC = () => {
           </div>
           <div className={$.contentWrap}>
             <div className={$.textBubble}>
-              <h1 className={$.intro}>
-                Krappe Sokken, indie band uit Alkmaar. Muzikale vreugde die je
-                laat dansen en glimlachen!
-              </h1>
+              <h1 className={$.intro}>Krappe Sokken</h1>
+              <h2>
+                Take your shoes off, keep your socks on and dance 'em off!'
+              </h2>
             </div>
             <div className={$.imageWrap}>
               {groupImages.length > 0 && !pending && (
