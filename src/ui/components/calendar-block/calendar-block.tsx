@@ -16,31 +16,31 @@ const CalendarBlock: React.FC = () => {
           </div>
           <h2 className={$.mobileHeader}>Opkomende gigs:</h2>
           <a
-            href="https://remindthegap.nl/"
+            href="https://www.merleyn.com/"
             target="_blank"
             rel="noreferrer"
             className={$.show}
           >
-            <b className={$.date}>13/09 ReMind The Gap Festival</b>
-            <span className={$.title}>De Goorn</span>
+            <b className={$.date}>29/11 Muziek Meerdaagse</b>
+            <span className={$.title}>Merleyn, Doetinchem</span>
           </a>
           <a
-            href="https://www.cpunt.nl/agenda/frisse-duyck-lux-the-kruuk-krappe-sokken"
+            href="https://www.cafesoundgarden.nl/"
             target="_blank"
             rel="noreferrer"
             className={$.show}
           >
-            <b className={$.date}>25/09 Frisse Duyck</b>
-            <span className={$.title}>Cpunt, Hoofddorp</span>
+            <b className={$.date}>11/12 Optreden</b>
+            <span className={$.title}>Soundgarden, Amsterdam</span>
           </a>
           <a
-            href="https://manifesto-hoorn.nl/productie/doemaar/"
+            href="https://krappe-sokken.weticket.io/krappe-kerst"
             target="_blank"
             rel="noreferrer"
             className={$.show}
           >
-            <b className={$.date}>26/09 Voorprogramma Doe Maar Tribute</b>
-            <span className={$.title}>Manifesto, Hoorn</span>
+            <b className={$.date}>21/12 Krappe Kerst</b>
+            <span className={$.title}>Ten Westen, Alkmaar</span>
           </a>
         </div>
       </div>

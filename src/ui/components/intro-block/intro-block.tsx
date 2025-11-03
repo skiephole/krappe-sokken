@@ -1,5 +1,5 @@
 import * as React from "react";
-import socks from "/logo512.png";
+import logo from "/logo512.png";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ref, getDownloadURL } from "firebase/storage";
@@ -9,7 +9,7 @@ import $ from "./intro-block.module.scss";
 
 // Preload the logo image
 const preloadLogo = new Image();
-preloadLogo.src = socks;
+preloadLogo.src = logo;
 
 const IntroBlock: React.FC = () => {
   const [arrowShown, setArrowShown] = React.useState(true);
@@ -72,13 +72,13 @@ const IntroBlock: React.FC = () => {
     <div className={$.background}>
       <div className={$.block}>
         <div className={$.welcome}>
-          <div className={$.socksWrap}>
+          <div className={$.logoWrap}>
             <img
-              className={$.socks}
-              src={socks}
-              alt="socks"
-              width={150}
-              height={150}
+              className={$.logo}
+              src={logo}
+              alt="logo"
+              width={250}
+              height={250}
               loading="eager"
               fetchPriority="high"
             />

@@ -85,16 +85,41 @@
 .card {
   background: #ffffff;
   border: #000000 5px solid;
-  border-radius: 25px;
   margin: 2rem;
   max-width: 80%;
   height: fit-content;
   max-width: 920px;
   padding: 2rem;
+  position: relative;
+
+    // Top-right corner extension
+    &::before {
+      content: "";
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      width: 30px;
+      height: 30px;
+      border-block-start: 5px solid #000000;
+      border-inline-end: 5px solid #000000;
+    }
+  
+    // Bottom-left corner extension
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: -15px;
+      width: 30px;
+      height: 30px;
+      border-block-end: 5px solid #000000;
+      border-inline-start: 5px solid #000000;
+    }
 }
 
 .header {
-  font-size: xx-large;
+  font-family: "Ledlight", sans-serif;
+  font-size: xxx-large;
   color: white;
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.41);
 }

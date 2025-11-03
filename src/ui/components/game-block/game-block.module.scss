@@ -85,7 +85,8 @@
 }
 
 .header {
-  font-size: xx-large;
+  font-family: "Ledlight", sans-serif;
+  font-size: xxx-large;
   color: white;
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.41);
   text-align: center;
@@ -111,7 +112,6 @@
 
 .gameCanvas {
   border: #000000 5px solid;
-  border-radius: 15px;
   background: white;
   display: flex;
   justify-content: center;
@@ -121,7 +121,6 @@
 
   canvas {
     display: block;
-    border-radius: 10px;
     max-width: 100%;
     max-height: 100%;
   }
@@ -148,7 +147,6 @@
 .gameUI {
   background: #ffffff;
   border: #000000 5px solid;
-  border-radius: 25px;
   margin: 2rem;
   width: 80%;
   height: fit-content;
@@ -161,6 +159,32 @@
 
   @include media-query(0, $breakpoint-small) {
     width: 70%;
+  }
+
+  position: relative;
+
+  // Top-right corner extension
+  &::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 30px;
+    height: 30px;
+    border-block-start: 5px solid #000000;
+    border-inline-end: 5px solid #000000;
+  }
+
+  // Bottom-left corner extension
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: -15px;
+    width: 30px;
+    height: 30px;
+    border-block-end: 5px solid #000000;
+    border-inline-start: 5px solid #000000;
   }
 }
 
