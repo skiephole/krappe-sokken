@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!-- Tree trunk -->
+  <rect x="480" y="750" width="64" height="100" fill="#8B4513"/>
+  
+  <!-- Tree layers (bottom to top) -->
+  <path d="M512 750 L300 550 L724 550 Z" fill="#228B22"/>
+  <path d="M512 550 L360 400 L664 400 Z" fill="#228B22"/>
+  <path d="M512 400 L420 300 L604 300 Z" fill="#228B22"/>
+  <path d="M512 300 L460 220 L564 220 Z" fill="#228B22"/>
+  
+  <!-- Star on top -->
+  <path d="M512 180 L520 200 L540 200 L525 215 L530 235 L512 225 L494 235 L499 215 L484 200 L504 200 Z" fill="#FFD700"/>
+  
+  <!-- Ornaments -->
+  <circle cx="400" cy="480" r="25" fill="#FF0000"/>
+  <circle cx="624" cy="480" r="25" fill="#FF0000"/>
+  <circle cx="360" cy="360" r="20" fill="#FFD700"/>
+  <circle cx="664" cy="360" r="20" fill="#FFD700"/>
+  <circle cx="450" cy="280" r="18" fill="#FF0000"/>
+  <circle cx="574" cy="280" r="18" fill="#0000FF"/>
+  <circle cx="512" cy="330" r="15" fill="#FFD700"/>
+  
+  <!-- Tinsel/garland -->
+  <path d="M320 500 Q512 480 704 500" stroke="#FFD700" stroke-width="8" fill="none"/>
+  <path d="M380 400 Q512 380 644 400" stroke="#FFD700" stroke-width="6" fill="none"/>
+  <path d="M440 320 Q512 300 584 320" stroke="#FFD700" stroke-width="4" fill="none"/>
+</svg>
+

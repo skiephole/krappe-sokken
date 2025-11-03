@@ -177,7 +177,7 @@ const GameBlock: React.FC = () => {
     const playerGroup = new THREE.Group();
 
     const bodyGeometry = new THREE.CylinderGeometry(0.3, 0.4, 1.2, 8);
-    const bodyMaterial = new THREE.MeshLambertMaterial({ color: 0x8a2be2 }); // Purple
+    const bodyMaterial = new THREE.MeshLambertMaterial({ color: 0xff0000 }); // Red
     const body = new THREE.Mesh(bodyGeometry, bodyMaterial);
     body.position.y = 0.6;
     body.castShadow = true;
@@ -190,13 +190,37 @@ const GameBlock: React.FC = () => {
     head.castShadow = true;
     playerGroup.add(head);
 
-    const hairGeometry = new THREE.SphereGeometry(0.28, 16, 16);
-    const hairMaterial = new THREE.MeshLambertMaterial({ color: 0xff69b4 }); // Pink
-    const hair = new THREE.Mesh(hairGeometry, hairMaterial);
-    hair.position.y = 1.65;
-    hair.scale.set(1, 0.8, 1);
-    hair.castShadow = true;
-    playerGroup.add(hair);
+    // const hairGeometry = new THREE.SphereGeometry(0.28, 16, 16);
+    // const hairMaterial = new THREE.MeshLambertMaterial({ color: 0xff69b4 }); // Pink
+    // const hair = new THREE.Mesh(hairGeometry, hairMaterial);
+    // hair.position.y = 1.65;
+    // hair.scale.set(1, 0.8, 1);
+    // hair.castShadow = true;
+    // playerGroup.add(hair);
+
+    // Christmas hat
+    const hatConeGeometry = new THREE.ConeGeometry(0.22, 0.5, 8);
+    const hatConeMaterial = new THREE.MeshLambertMaterial({ color: 0xff0000 }); // Red
+    const hatCone = new THREE.Mesh(hatConeGeometry, hatConeMaterial);
+    hatCone.position.y = 1.9;
+    hatCone.castShadow = true;
+    playerGroup.add(hatCone);
+
+    // White fluffy trim
+    const hatTrimGeometry = new THREE.TorusGeometry(0.22, 0.03, 8, 16);
+    const hatTrimMaterial = new THREE.MeshLambertMaterial({ color: 0xffffff }); // White
+    const hatTrim = new THREE.Mesh(hatTrimGeometry, hatTrimMaterial);
+    hatTrim.position.y = 1.73;
+    hatTrim.castShadow = true;
+    playerGroup.add(hatTrim);
+
+    // White pom-pom at the top
+    const hatPomGeometry = new THREE.SphereGeometry(0.04, 8, 8);
+    const hatPomMaterial = new THREE.MeshLambertMaterial({ color: 0xffffff }); // White
+    const hatPom = new THREE.Mesh(hatPomGeometry, hatPomMaterial);
+    hatPom.position.y = 2.15;
+    hatPom.castShadow = true;
+    playerGroup.add(hatPom);
 
     const armGeometry = new THREE.CylinderGeometry(0.08, 0.08, 0.8, 8);
     const armMaterial = new THREE.MeshLambertMaterial({ color: 0xffdbb3 });
@@ -251,7 +275,7 @@ const GameBlock: React.FC = () => {
     for (let i = 0; i < 3; i++) {
       const backgroundGroup = new THREE.Group();
 
-      const svgFiles = ["/sock-tree.svg", "/sock-bush.svg"];
+      const svgFiles = ["/sock-christmas-tree.svg"];
       const randomSvg = svgFiles[Math.floor(Math.random() * svgFiles.length)];
 
       const scale = 2 + Math.random() * 1.2;
@@ -314,9 +338,9 @@ const GameBlock: React.FC = () => {
 
     const loader = new THREE.TextureLoader();
     loader.load(
-      "/sock-pile.svg",
+      "/snowman.svg",
       (texture) => {
-        const sockGeometry = new THREE.PlaneGeometry(1.8, 1.8);
+        const sockGeometry = new THREE.PlaneGeometry(1.2, 1.2);
         const sockMaterial = new THREE.MeshBasicMaterial({
           map: texture,
           transparent: true,
@@ -335,7 +359,7 @@ const GameBlock: React.FC = () => {
       (error) => {
         console.error("Error loading sock pile SVG:", error);
 
-        const fallbackGeometry = new THREE.PlaneGeometry(1.0, 0.8);
+        const fallbackGeometry = new THREE.PlaneGeometry(1.2, 1.2);
         const fallbackMaterial = new THREE.MeshLambertMaterial({
           color: 0xff6b6b,
           transparent: true,
@@ -350,7 +374,7 @@ const GameBlock: React.FC = () => {
       }
     );
 
-    const collisionGeometry = new THREE.BoxGeometry(0.6, 0.6, 0.1);
+    const collisionGeometry = new THREE.BoxGeometry(0.4, 0.4, 0.1);
     const collisionMaterial = new THREE.MeshLambertMaterial({
       transparent: false,
       opacity: 1,
@@ -371,7 +395,7 @@ const GameBlock: React.FC = () => {
 
     const backgroundGroup = new THREE.Group();
 
-    const svgFiles = ["/sock-tree.svg", "/sock-bush.svg"];
+    const svgFiles = ["/sock-christmas-tree.svg"];
     const randomSvg = svgFiles[Math.floor(Math.random() * svgFiles.length)];
 
     const scale = 2 + Math.random() * 1.2;
