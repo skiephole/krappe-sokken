@@ -275,7 +275,7 @@ const GameBlock: React.FC = () => {
     for (let i = 0; i < 3; i++) {
       const backgroundGroup = new THREE.Group();
 
-      const svgFiles = ["/sock-christmas-tree.svg"];
+      const svgFiles = ["/christmas-tree.svg"];
       const randomSvg = svgFiles[Math.floor(Math.random() * svgFiles.length)];
 
       const scale = 2 + Math.random() * 1.2;
@@ -395,7 +395,7 @@ const GameBlock: React.FC = () => {
 
     const backgroundGroup = new THREE.Group();
 
-    const svgFiles = ["/sock-christmas-tree.svg"];
+    const svgFiles = ["/christmas-tree.svg"];
     const randomSvg = svgFiles[Math.floor(Math.random() * svgFiles.length)];
 
     const scale = 2 + Math.random() * 1.2;

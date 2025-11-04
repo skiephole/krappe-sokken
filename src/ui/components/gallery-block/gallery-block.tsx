@@ -10,7 +10,7 @@ type GroupImage = {
 };
 
 const GalleryBlock: React.FC = () => {
-  const { isMedium } = useBreakpoints();
+  const { isMedium, isSmall } = useBreakpoints();
   const [groupImages, setGroupImages] = React.useState<GroupImage[]>();
   const [isVisible, setIsVisible] = React.useState(false);
   const galleryRef = React.useRef<HTMLDivElement>(null);
@@ -67,14 +67,35 @@ const GalleryBlock: React.FC = () => {
     }
   }, [isVisible, getGroupImages]);
 
+  const sliderWidth = () => {
+    if(isSmall) {
+      return 300;
+    }
+    if (isMedium) {
+      return 400;
+    }
+   
+    return 750;
+  }
+  const sliderHeight = () => {
+    if(isSmall) {
+      return 200;
+    }
+    if (isMedium) {
+      return 300;
+    }
+   
+    return 527;
+  }
+
   return (
     <div className={$.block}>
       <div className={$.gallery} ref={galleryRef}>
         <div className={$.slider}>
           {groupImages && (
             <SimpleImageSlider
-              width={isMedium ? 320 : 750}
-              height={isMedium ? 213 : 527}
+              width={sliderWidth()}
+              height={sliderHeight()}
               navStyle={1}
               images={groupImages}
               showBullets={false}

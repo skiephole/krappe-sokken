@@ -90,12 +90,12 @@
   height: fit-content;
   max-width: 920px;
   padding: 2rem;
+  position: relative;
 
   @include media-query(0, $breakpoint-small) {
     width: 70%;
   }
 
-  position: relative;
 
   // Top-right corner extension
        &::before {
