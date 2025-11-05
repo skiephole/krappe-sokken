@@ -1,0 +1,274 @@
+@use "../../styles/variables" as *;
+
+.background {
+  background-color: #15136b;
+  height: 100vh;
+  width: 100%;
+  min-height: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.background::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 30%, #0f0e4d 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.block {
+  background-color:  #134608;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 800px;
+  flex-direction: column;
+  position: relative;
+  padding: 0.5rem;
+}
+
+.block::after {
+  content: "";
+  position: absolute;
+  bottom: 7px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background:  #15136b;
+  z-index: 1;
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.2));
+
+  clip-path: polygon(
+    0% 100%,
+    1% 85%,
+    3% 92%,
+    5% 78%,
+    8% 88%,
+    11% 82%,
+    14% 95%,
+    17% 75%,
+    20% 90%,
+    23% 80%,
+    26% 93%,
+    29% 76%,
+    32% 87%,
+    35% 83%,
+    38% 96%,
+    41% 72%,
+    44% 89%,
+    47% 81%,
+    50% 94%,
+    53% 77%,
+    56% 86%,
+    59% 84%,
+    62% 91%,
+    65% 79%,
+    68% 88%,
+    71% 85%,
+    74% 92%,
+    77% 74%,
+    80% 87%,
+    83% 82%,
+    86% 95%,
+    89% 78%,
+    92% 90%,
+    95% 83%,
+    98% 89%,
+    100% 100%
+  );
+}
+
+.block::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 30%, #670007 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1440px;
+  height: 80%;
+
+  @include media-query(0, $breakpoint-large) {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+
+.textBubble {
+  position: relative;
+  background: #ffffff;
+  border: #000000 5px solid;
+  flex: 0 0 50%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+
+  @include media-query(0, $breakpoint-large) {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 92%;
+    order: 1;
+  }
+
+  // Top-right corner extension
+  &::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 30px;
+    height: 30px;
+    border-block-start: 5px solid #000000;
+    border-inline-end: 5px solid #000000;
+  }
+
+  // Bottom-left corner extension
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: -15px;
+    width: 30px;
+    height: 30px;
+    border-block-end: 5px solid #000000;
+    border-inline-start: 5px solid #000000;
+  }
+}
+
+.title {
+  font-size: x-large;
+  margin: 1rem;
+  font-weight: bold;
+
+  @include media-query(0, $breakpoint-small) {
+    font-size: large;
+  }
+}
+
+.text {
+  font-size: large;
+  margin: 1rem;
+
+  @include media-query(0, $breakpoint-small) {
+    font-size: medium;
+  }
+}
+
+.iframeWrapper {
+  flex: 0 0 45%;
+  width: 100%;
+  max-width: 800px;
+  background: #ffffff;
+  border: #000000 5px solid;
+  position: relative;
+  overflow: hidden;
+  height: 650px;
+  z-index: 1;
+
+  @include media-query(0, $breakpoint-large) {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 92%;
+    order: 2;
+    height: 500px;
+  }
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+  }
+}
+
+.image {
+  position: absolute;
+  bottom: -1rem;
+  left: 0;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+@-webkit-keyframes flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  41.99% {
+    opacity: 1;
+  }
+  42% {
+    opacity: 0;
+  }
+  43% {
+    opacity: 0;
+  }
+  43.01% {
+    opacity: 1;
+  }
+  47.99% {
+    opacity: 1;
+  }
+  48% {
+    opacity: 0;
+  }
+  49% {
+    opacity: 0;
+  }
+  49.01% {
+    opacity: 1;
+  }
+}
+
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  41.99% {
+    opacity: 1;
+  }
+  42% {
+    opacity: 0;
+  }
+  43% {
+    opacity: 0;
+  }
+  43.01% {
+    opacity: 1;
+  }
+  47.99% {
+    opacity: 1;
+  }
+  48% {
+    opacity: 0;
+  }
+  49% {
+    opacity: 0;
+  }
+  49.01% {
+    opacity: 1;
+  }
+}
+
