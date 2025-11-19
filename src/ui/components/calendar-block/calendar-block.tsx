@@ -16,15 +16,6 @@ const CalendarBlock: React.FC = () => {
           </div>
           <h2 className={$.mobileHeader}>Opkomende gigs:</h2>
           <a
-            href="https://www.merleyn.com/"
-            target="_blank"
-            rel="noreferrer"
-            className={$.show}
-          >
-            <b className={$.date}>29/11 Muziek Meerdaagse</b>
-            <span className={$.title}>Merleyn, Doetinchem</span>
-          </a>
-          <a
             href="https://www.cafesoundgarden.nl/"
             target="_blank"
             rel="noreferrer"
