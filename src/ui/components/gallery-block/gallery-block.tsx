@@ -126,7 +126,7 @@ const GalleryBlock: React.FC = () => {
           </p>
         </div>
       </div>
-      <div className={$.footer}>
+      <footer className={$.footer}>
         <a href="mailto: krappesokkenband@gmail.com" className={$.link}>
           krappesokkenband@gmail.com
         </a>
@@ -139,7 +139,7 @@ const GalleryBlock: React.FC = () => {
         >
           @krappesokkenband
         </a>
-      </div>
+      </footer>
     </div>
   );
 };

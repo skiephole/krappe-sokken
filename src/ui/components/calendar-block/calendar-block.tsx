@@ -5,10 +5,10 @@ const CalendarBlock: React.FC = () => {
   return (
     <div className={$.background}>
       <div className={$.block}>
-        <h1 className={$.header}>
+        <h2 className={$.header}>
           SHOWS
           <span className={$.dot}>:</span>
-        </h1>
+        </h2>
         <div className={$.card}>
           <div className={$.desktopHeader}>
             <h2>Data:</h2>
@@ -16,22 +16,31 @@ const CalendarBlock: React.FC = () => {
           </div>
           <h2 className={$.mobileHeader}>Opkomende gigs:</h2>
           <a
-            href="https://www.cafesoundgarden.nl/"
+            href="https://em2groningen.nl/event/freesonic-vrijdag/"
             target="_blank"
             rel="noreferrer"
             className={$.show}
           >
-            <b className={$.date}>11/12 Optreden</b>
-            <span className={$.title}>Soundgarden, Amsterdam</span>
+            <b className={$.date}>16/01 Freesonic</b>
+            <span className={$.title}>EM2, Groningen</span>
           </a>
           <a
-            href="https://krappe-sokken.weticket.io/krappe-kerst"
+            href="https://alkmaarseigenste.nl/"
             target="_blank"
             rel="noreferrer"
             className={$.show}
           >
-            <b className={$.date}>21/12 Krappe Kerst</b>
-            <span className={$.title}>Ten Westen, Alkmaar</span>
+            <b className={$.date}>24/01 Alkmaars Eigenste</b>
+            <span className={$.title}>Podium Victorie, Alkmaar</span>
+          </a>
+          <a
+            href="https://slachthuishaarlem.nl/"
+            target="_blank"
+            rel="noreferrer"
+            className={$.show}
+          >
+            <b className={$.date}>15/02 Mars Attacks</b>
+            <span className={$.title}>Slachthuis, Haarlem</span>
           </a>
         </div>
       </div>
