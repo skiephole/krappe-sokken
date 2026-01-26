@@ -16,24 +16,6 @@ const CalendarBlock: React.FC = () => {
           </div>
           <h2 className={$.mobileHeader}>Opkomende gigs:</h2>
           <a
-            href="https://em2groningen.nl/event/freesonic-vrijdag/"
-            target="_blank"
-            rel="noreferrer"
-            className={$.show}
-          >
-            <b className={$.date}>16/01 Freesonic</b>
-            <span className={$.title}>EM2, Groningen</span>
-          </a>
-          <a
-            href="https://alkmaarseigenste.nl/"
-            target="_blank"
-            rel="noreferrer"
-            className={$.show}
-          >
-            <b className={$.date}>24/01 Alkmaars Eigenste</b>
-            <span className={$.title}>Podium Victorie, Alkmaar</span>
-          </a>
-          <a
             href="https://slachthuishaarlem.nl/"
             target="_blank"
             rel="noreferrer"
@@ -41,6 +23,15 @@ const CalendarBlock: React.FC = () => {
           >
             <b className={$.date}>15/02 Mars Attacks</b>
             <span className={$.title}>Slachthuis, Haarlem</span>
+          </a>
+          <a
+            href="https://uniekezaken.nl/speellijst/"
+            target="_blank"
+            rel="noreferrer"
+            className={$.show}
+          >
+            <b className={$.date}>21/02 Kunst voor Gaza</b>
+            <span className={$.title}>Fabrique Unique, Alkmaar</span>
           </a>
         </div>
       </div>

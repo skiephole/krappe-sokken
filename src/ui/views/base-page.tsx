@@ -5,7 +5,7 @@ import BioBlock from "app/components/bio-block/bio-block";
 import MusicBlock from "app/components/music-block/music-block";
 import IntroBlock from "app/components/intro-block/intro-block";
 import CalendarBlock from "app/components/calendar-block/calendar-block";
-import GameBlock from "app/components/game-block/game-block";
+import SockJumpBlock from "app/components/sock-jump-block/sock-jump-block";
 import $ from "./base-page.module.scss";
 
 const BasePageView: React.FC = () => {
@@ -16,7 +16,7 @@ const BasePageView: React.FC = () => {
       <CalendarBlock />
       <BioBlock />
       <MusicBlock />
-      <GameBlock />
+      <SockJumpBlock />
       <GalleryBlock />
     </div>
   );

@@ -2,7 +2,7 @@ import * as React from "react";
 import * as THREE from "three";
 import { database } from "../../../firebase";
 import { ref, get, set } from "firebase/database";
-import $ from "./game-block.module.scss";
+import $ from "./sock-jump-block.module.scss";
 
 const GameBlock: React.FC = () => {
   const mountRef = React.useRef<HTMLDivElement>(null);
@@ -30,26 +30,34 @@ const GameBlock: React.FC = () => {
   const [highScore, setHighScore] = React.useState(() => {
     return parseInt(localStorage.getItem("sockJumpHighScore") || "0");
   });
-  const [allTimeHighScore, setAllTimeHighScore] = React.useState(0);
+  const [allTimeHighScore, setAllTimeHighScore] = React.useState<number | null>(null);
 
   const fetchAllTimeHighScore = React.useCallback(async () => {
     try {
+      console.log("Fetching all-time high score...");
       const highScoreRef = ref(database, "highScore");
       const snapshot = await get(highScoreRef);
       if (snapshot.exists()) {
-        setAllTimeHighScore(snapshot.val());
+        const value = snapshot.val();
+        console.log("Fetched high score:", value);
+        setAllTimeHighScore(value);
+      } else {
+        console.log("No high score found in database, setting to 0");
+        setAllTimeHighScore(0);
       }
     } catch (error) {
       console.error("Error fetching high score:", error);
+      setAllTimeHighScore(0); // Set to 0 on error so game can still work
     }
   }, []);
 
   const updateAllTimeHighScore = React.useCallback(async (newScore: number) => {
     try {
+      console.log("Attempting to update high score to:", newScore);
       const highScoreRef = ref(database, "highScore");
       await set(highScoreRef, newScore);
       setAllTimeHighScore(newScore);
-      console.log("High score updated to:", newScore);
+      console.log("High score successfully updated to:", newScore);
     } catch (error) {
       console.error("Error updating high score:", error);
     }
@@ -177,50 +185,26 @@ const GameBlock: React.FC = () => {
     const playerGroup = new THREE.Group();
 
     const bodyGeometry = new THREE.CylinderGeometry(0.3, 0.4, 1.2, 8);
-    const bodyMaterial = new THREE.MeshLambertMaterial({ color: 0xff0000 }); // Red
+    const bodyMaterial = new THREE.MeshLambertMaterial({ color: 0x800080 });
     const body = new THREE.Mesh(bodyGeometry, bodyMaterial);
     body.position.y = 0.6;
     body.castShadow = true;
     playerGroup.add(body);
 
     const headGeometry = new THREE.SphereGeometry(0.25, 16, 16);
-    const headMaterial = new THREE.MeshLambertMaterial({ color: 0xffdbb3 }); // Skin tone
+    const headMaterial = new THREE.MeshLambertMaterial({ color: 0xffdbb3 });
     const head = new THREE.Mesh(headGeometry, headMaterial);
     head.position.y = 1.5;
     head.castShadow = true;
     playerGroup.add(head);
 
-    // const hairGeometry = new THREE.SphereGeometry(0.28, 16, 16);
-    // const hairMaterial = new THREE.MeshLambertMaterial({ color: 0xff69b4 }); // Pink
-    // const hair = new THREE.Mesh(hairGeometry, hairMaterial);
-    // hair.position.y = 1.65;
-    // hair.scale.set(1, 0.8, 1);
-    // hair.castShadow = true;
-    // playerGroup.add(hair);
-
-    // Christmas hat
-    const hatConeGeometry = new THREE.ConeGeometry(0.22, 0.5, 8);
-    const hatConeMaterial = new THREE.MeshLambertMaterial({ color: 0xff0000 }); // Red
-    const hatCone = new THREE.Mesh(hatConeGeometry, hatConeMaterial);
-    hatCone.position.y = 1.9;
-    hatCone.castShadow = true;
-    playerGroup.add(hatCone);
-
-    // White fluffy trim
-    const hatTrimGeometry = new THREE.TorusGeometry(0.22, 0.03, 8, 16);
-    const hatTrimMaterial = new THREE.MeshLambertMaterial({ color: 0xffffff }); // White
-    const hatTrim = new THREE.Mesh(hatTrimGeometry, hatTrimMaterial);
-    hatTrim.position.y = 1.73;
-    hatTrim.castShadow = true;
-    playerGroup.add(hatTrim);
-
-    // White pom-pom at the top
-    const hatPomGeometry = new THREE.SphereGeometry(0.04, 8, 8);
-    const hatPomMaterial = new THREE.MeshLambertMaterial({ color: 0xffffff }); // White
-    const hatPom = new THREE.Mesh(hatPomGeometry, hatPomMaterial);
-    hatPom.position.y = 2.15;
-    hatPom.castShadow = true;
-    playerGroup.add(hatPom);
+    const hairGeometry = new THREE.SphereGeometry(0.28, 16, 16);
+    const hairMaterial = new THREE.MeshLambertMaterial({ color: 0xff69b4 });
+    const hair = new THREE.Mesh(hairGeometry, hairMaterial);
+    hair.position.y = 1.65;
+    hair.scale.set(1, 0.8, 1);
+    hair.castShadow = true;
+    playerGroup.add(hair);
 
     const armGeometry = new THREE.CylinderGeometry(0.08, 0.08, 0.8, 8);
     const armMaterial = new THREE.MeshLambertMaterial({ color: 0xffdbb3 });
@@ -275,7 +259,7 @@ const GameBlock: React.FC = () => {
     for (let i = 0; i < 3; i++) {
       const backgroundGroup = new THREE.Group();
 
-      const svgFiles = ["/christmas-tree.svg"];
+      const svgFiles = ["/sock-tree.svg"];
       const randomSvg = svgFiles[Math.floor(Math.random() * svgFiles.length)];
 
       const scale = 2 + Math.random() * 1.2;
@@ -338,7 +322,7 @@ const GameBlock: React.FC = () => {
 
     const loader = new THREE.TextureLoader();
     loader.load(
-      "/snowman.svg",
+      "/sock-pile.svg",
       (texture) => {
         const sockGeometry = new THREE.PlaneGeometry(1.2, 1.2);
         const sockMaterial = new THREE.MeshBasicMaterial({
@@ -395,7 +379,7 @@ const GameBlock: React.FC = () => {
 
     const backgroundGroup = new THREE.Group();
 
-    const svgFiles = ["/christmas-tree.svg"];
+    const svgFiles = ["/sock-tree.svg"];
     const randomSvg = svgFiles[Math.floor(Math.random() * svgFiles.length)];
 
     const scale = 2 + Math.random() * 1.2;
@@ -585,13 +569,15 @@ const GameBlock: React.FC = () => {
       setGameOver(true);
 
       const currentScore = gameRef.current.score;
+      console.log("Game over - currentScore:", currentScore, "allTimeHighScore:", allTimeHighScore);
 
       if (currentScore > highScore) {
         setHighScore(currentScore);
         localStorage.setItem("sockJumpHighScore", currentScore.toString());
       }
 
-      if (allTimeHighScore && currentScore > allTimeHighScore) {
+      if (allTimeHighScore !== null && currentScore > allTimeHighScore) {
+        console.log("Updating all-time high score");
         updateAllTimeHighScore(currentScore);
       }
 
@@ -697,7 +683,7 @@ const GameBlock: React.FC = () => {
               <div className={$.scoreBoard}>
                 <div>Score: {score}</div>
                 <div>High Score: {highScore}</div>
-                <div>2026 High Score: {allTimeHighScore || "-"}</div>
+                <div>2026 High Score: {allTimeHighScore !== null ? allTimeHighScore : "Loading..."}</div>
               </div>
 
               {!gameStarted && (

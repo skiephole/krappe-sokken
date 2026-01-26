@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Sock body -->
+  <rect x="60" y="80" width="80" height="100" rx="10" fill="#800080"/>
+  <!-- Sock opening -->
+  <ellipse cx="100" cy="80" rx="40" ry="15" fill="#9c89b8"/>
+  <!-- Eyes -->
+  <circle cx="85" cy="120" r="8" fill="#000"/>
+  <circle cx="115" cy="120" r="8" fill="#000"/>
+  <!-- Smile -->
+  <path d="M 80 140 Q 100 150 120 140" stroke="#000" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- Decorative stripes -->
+  <rect x="70" y="100" width="60" height="5" fill="#ff69b4"/>
+  <rect x="70" y="110" width="60" height="5" fill="#ff69b4"/>
+  <rect x="70" y="150" width="60" height="5" fill="#ff69b4"/>
+</svg>
+
