@@ -3,12 +3,6 @@
     "site": "krappe-sokken",
     "public": "dist",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ],
     "redirects": [
       {
         "source": "/karperton",
@@ -41,6 +35,15 @@
       },
       {
         "source": "index.html",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache"
+          }
+        ]
+      },
+      {
+        "source": "404.html",
         "headers": [
           {
             "key": "Cache-Control",

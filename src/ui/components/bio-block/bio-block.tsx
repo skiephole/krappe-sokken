@@ -23,7 +23,7 @@ const BioBlock: React.FC = () => {
 
   const desktopBio = (
     <>
-      Krappe Sokken; word in het west-Fries gezegd als iets net aan goed gaat,
+      Krappe Sokken; wordt in het west-Fries gezegd als iets net aan goed gaat,
       iemand die net optijd komt, iets wat eventjes spannend was maar gelukkig
       goed komt. Krappe Sokken (de band) ziet het als risico durven nemen,
       spelen op de grens en niet bang zijn voor verandering. Indie-rock in de
@@ -33,7 +33,7 @@ const BioBlock: React.FC = () => {
       over de haat/liefde relatie met parkeergarage Het Karperton, bracht Krappe
       sokken als tegenhanger in hun muzikale zoektocht in zomer 2024 een eerste
       EP uit genaamd ‘Saturday spice’ zomerse indie vanuit de waardering voor
-      kleine dingen in het leven en menselijkheid. Op het podium word die rust
+      kleine dingen in het leven en menselijkheid. Op het podium wordt die rust
       al gauw verstoord door een springende energiebommetjes, scheurende gitaren
       en schoenen die je om je oren zullen vliegen.
     </>

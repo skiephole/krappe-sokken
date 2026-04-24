@@ -162,6 +162,12 @@
   }
 }
 
+.title {
+  @include media-query($breakpoint-medium) {
+  text-align: right;
+  }
+}
+
 .dot {
   -webkit-animation: flicker 2s linear infinite both;
   animation: flicker 2s linear infinite both;
