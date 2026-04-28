@@ -80,118 +80,17 @@
               "https://www.youtube.com/watch?v=yCMl5GpNgVA&list=OLAK5uy_lehqulo6kWvXUQ7iF4px2cw92Zg-db9Hs",
               "https://music.apple.com/dk/album/saturday-spice-ep/1753390346"
             ]
-          },
-          {
-            "@type": "MusicEvent",
-            "name": "Koningsnacht — Taverne, Bergen",
-            "startDate": "2026-04-26",
-            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-            "eventStatus": "https://schema.org/EventScheduled",
-            "url": "https://www.facebook.com/events/1259855362977058/",
-            "location": {
-              "@type": "Place",
-              "name": "Taverne",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Bergen",
-                "addressCountry": "NL"
-              }
-            },
-            "performer": { "@id": "https://krappesokken.nl/#band" }
-          },
-          {
-            "@type": "MusicEvent",
-            "name": "Mijkever — Ten Westen, Alkmaar",
-            "startDate": "2026-05-02",
-            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-            "eventStatus": "https://schema.org/EventScheduled",
-            "url": "https://www.instagram.com/mijkeverfest/",
-            "location": {
-              "@type": "Place",
-              "name": "Ten Westen",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Alkmaar",
-                "addressCountry": "NL"
-              }
-            },
-            "performer": { "@id": "https://krappesokken.nl/#band" }
-          },
-          {
-            "@type": "MusicEvent",
-            "name": "BevrijdingsHal25 — Hal25, Alkmaar",
-            "startDate": "2026-05-05",
-            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-            "eventStatus": "https://schema.org/EventScheduled",
-            "url": "https://hal25.nl/",
-            "location": {
-              "@type": "Place",
-              "name": "Hal25",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Alkmaar",
-                "addressCountry": "NL"
-              }
-            },
-            "performer": { "@id": "https://krappesokken.nl/#band" }
-          },
-          {
-            "@type": "MusicEvent",
-            "name": "Kunst Cultuur Weekend — De Oever, Oudorp",
-            "startDate": "2026-05-16",
-            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-            "eventStatus": "https://schema.org/EventScheduled",
-            "url": "https://www.facebook.com/groups/492366877515547/user/100052455497436/",
-            "location": {
-              "@type": "Place",
-              "name": "De Oever",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Oudorp",
-                "addressCountry": "NL"
-              }
-            },
-            "performer": { "@id": "https://krappesokken.nl/#band" }
-          },
-          {
-            "@type": "MusicEvent",
-            "name": "Huisweid — Tuitjenhorn",
-            "startDate": "2026-05-24",
-            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-            "eventStatus": "https://schema.org/EventScheduled",
-            "url": "https://huisweidfestival.nl/",
-            "location": {
-              "@type": "Place",
-              "name": "Huisweid",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Tuitjenhorn",
-                "addressCountry": "NL"
-              }
-            },
-            "performer": { "@id": "https://krappesokken.nl/#band" }
-          },
-          {
-            "@type": "MusicEvent",
-            "name": "Karavaan Festival — Victoriepark, Alkmaar",
-            "startDate": "2026-05-30",
-            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-            "eventStatus": "https://schema.org/EventScheduled",
-            "url": "https://www.karavaan.nl/festivals/karavaan-festival/?category=&date=&q=",
-            "location": {
-              "@type": "Place",
-              "name": "Victoriepark",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Alkmaar",
-                "addressCountry": "NL"
-              }
-            },
-            "performer": { "@id": "https://krappesokken.nl/#band" }
           }
         ]
       }
     </script>
+
+    <!--
+      MusicEvent JSON-LD is injected here at build/dev time from
+      src/data/shows.ts via the inject-events-jsonld plugin in vite.config.ts.
+      Do not edit by hand — change shows.ts instead.
+    -->
+    <!--EVENTS_JSON_LD-->
 
     <!-- Preload critical assets -->
     <link rel="preload" href="/logo512.png" as="image" />
