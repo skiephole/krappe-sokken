@@ -1,3 +1,5 @@
+import { readFileSync, writeFileSync } from "fs";
+import { resolve } from "path";
 import { defineConfig } from "vite";
 import type { Plugin } from "vite";
 import react from "@vitejs/plugin-react";
@@ -57,9 +59,49 @@ const injectEventsJsonLd = (): Plugin => ({
   },
 });
 
+// Emit sitemap.xml with a fresh `lastmod` on every build. Keeps search engines
+// honest about freshness without manual edits to a static file.
+const generateSitemap = (): Plugin => ({
+  name: "generate-sitemap",
+  apply: "build",
+  generateBundle() {
+    const lastmod = new Date().toISOString().slice(0, 10);
+    const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>${SITE_URL}/</loc>
+    <lastmod>${lastmod}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
+`;
+    this.emitFile({ type: "asset", fileName: "sitemap.xml", source: xml });
+  },
+});
+
+// Build dist/404.html from dist/index.html and inject a static `noindex` meta,
+// so unknown URLs never get indexed even if the SPA's runtime tag is missed.
+const generate404Html = (): Plugin => ({
+  name: "generate-404-html",
+  apply: "build",
+  closeBundle() {
+    const indexPath = resolve("dist/index.html");
+    const fourOhFourPath = resolve("dist/404.html");
+    const noindex = '<meta name="robots" content="noindex, nofollow" />';
+    const html = readFileSync(indexPath, "utf8").replace(
+      "<head>",
+      `<head>\n    ${noindex}`
+    );
+    writeFileSync(fourOhFourPath, html);
+  },
+});
+
 export default defineConfig({
   plugins: [
     injectEventsJsonLd(),
+    generateSitemap(),
+    generate404Html(),
     react(),
     viteTsconfigPaths(),
     svgrPlugin(),

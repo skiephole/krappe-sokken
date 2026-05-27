@@ -60,7 +60,7 @@ const IntroBlock: React.FC = () => {
             <img
               className={$.logo}
               src={logo}
-              alt="logo"
+              alt="Krappe Sokken — bandlogo"
               width={250}
               height={250}
               loading="eager"

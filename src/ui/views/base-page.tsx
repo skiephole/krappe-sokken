@@ -12,12 +12,14 @@ const BasePageView: React.FC = () => {
   return (
     <div className={$.container}>
       <Navigation />
-      <IntroBlock />
-      <CalendarBlock />
-      <BioBlock />
-      <MusicBlock />
-      <SockJumpBlock />
-      <GalleryBlock />
+      <main className={$.main}>
+        <IntroBlock />
+        <CalendarBlock />
+        <BioBlock />
+        <MusicBlock />
+        <SockJumpBlock />
+        <GalleryBlock />
+      </main>
     </div>
   );
 };
